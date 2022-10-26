@@ -58,6 +58,16 @@
     flex-direction: column;
   }
 
+  .iconCarrito:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
+  }
+
+  .iconCarrito:active{
+    transition: 0.3s;
+    transform: scale(0.9);
+  }
+
   .iconNumCarrito{
     position: absolute;
     border-radius: 50%;
@@ -120,15 +130,13 @@
 /*--------------------------------------------------------------------------*/
 
 .ContenedorBarraBusqueda{
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 170px;
+    margin-right: 188px;
 
 }
 
   .seccionCatalogo{
-    
+    width: 100%;
     background-color: #ffffff96;
   }
 
@@ -196,6 +204,17 @@
     align-items: center;
   }
 
+  .tituloNovedades{font-family: "Motiva Sans", Sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 10px;
+  letter-spacing: 0.03em;
+  font-weight: normal;
+  padding-top: 2px;
+}
+
   .carruselNovedades{
     margin-bottom: 50px;
     margin-left: 200px;
@@ -215,7 +234,20 @@
   }
 
   .menuCatalogo{
-    background-color: wheat;
+    background-color: #1b2838ad;
+    color: rgb(102, 192, 244);
+    width: 177px;
+  }
+
+  .menuCatalogo ul{
+    border-top: 1px solid #808080e0;
+    padding: 0;
+  }
+
+  .liFiltro{
+    border-bottom: 1px solid #808080e0;
+    list-style: none;
+    margin-top: 5px;
   }
 
 
@@ -234,7 +266,7 @@
     background: linear-gradient( to right, #75b022 5%, #588a1b 95%);
     border:#1b2838 ;
     margin-bottom: 4px;
-    color:#c2c2c2;
+    color:#d2efa9;
     
   }
 
@@ -242,7 +274,13 @@
  
 .btnAgregar:hover{
   transition: 0.5s;
+  
   color:#FFF!important; 
+}
+
+.btnAgregar:active{
+  transition: 0.3s;
+  transform: scale(0.9);
 }
 
 
@@ -273,12 +311,49 @@
 
   /*-------------------------------------CARRITO PAGINA---------------*/
 
+  .SeccionCarritoHTML{
+  
+    display: flex;
+      justify-content: space-around;
+      padding-top: 50px;
+  }
+
+  .cardTotal{
+    padding-top: 105px;
+  }
+
+  .boxCardTotal{
+    border: 1px solid gray;
+    padding: 10px;
+    width: 15rem;
+  }
+    
+
+  .tablaCarrito{
+    width: 100%;
+
+  }
+
+  .tablaCarrito thead tr{
+
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 13px;
+
+  }
+
+  .product-img{
+    width: 95px;
+  }
+
   .juegoEnCarritoContenedor{
   
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid #E6E6E6;
   }
 
   .juegoEnCarritoContenedor td{
@@ -288,40 +363,74 @@
     padding: 10px;
 }
 
+.nombreJuegoCarrito{
+  font-size: 1rem;
+}
+
 .btnSu{
   padding: 0 5px;
   min-width: 25px;
-  height: 42px;
+  height: 37px;
   border: 1px solid #3939394a;
-  border-radius: 0% 30% 30% 0%;
+  border-radius: 0% 38% 38% 0%;
   background: transparent;
   box-shadow: none;
+  color: #777;
+}
+
+.btnSu:hover{
+  transition: 0.3s;
+  background-color: rgb(219 51 51);
+  border-color: rgb(219 51 51);
+  color:#FFF;
 }
 
 .cantidadCarrito{
   display: flex;
   border: 1px solid #3939394a;
-  width: 30px;
+  width: 29px;
+  height: 37px;
   align-items: center;
   justify-content: center;
   margin: 0;
+  font-size: 1rem;
+  color: #777;
 }
 
 .btnRe{
   padding: 0 5px;
   min-width: 25px;
   border: 1px solid #3939394a;
-  height: 42px;
-  border-radius: 30% 0% 0% 30%;
+  height: 37px;
+  border-radius: 38% 0% 0% 38%;
   background: transparent;
   box-shadow: none;
+  color: #777;
 
+}
+
+.btnRe:hover{
+  transition: 0.3s;
+  background-color: rgb(219 51 51);
+  border-color: rgb(219 51 51);
+  color:#FFF;
+}
+
+.precioCarrito{
+  font-size: 1.1rem;
+  color: #777;
+}
+.subTotalCarrito{
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgb(218 49 49);
 }
 
 .contenedorLimpiarCarrito{
   text-align: center;
   width: auto;
   height: auto;
+  padding-top: 14px;
 }
 
 .limpiarCarrito{
@@ -334,8 +443,37 @@
   border: none;
 }
 
-
-.SeccionCarritoHTML{
-  display: flex;
+.limpiarCarrito:hover{
+  transition: 0.5s;
+  background-color: #588a1b;
 }
-  
+
+.limpiarCarrito:active{
+  transition: 0.3s;
+  transform: scale(0.9);
+}
+
+.tableTotalCar{
+  width: 100%;
+}
+
+.tbodyTotalCar{
+display: flex;
+width: 100%;
+flex-direction: column;
+align-items: flex-start;
+}
+
+.trTotalCar{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 7px;
+  }
+
+  .TituloTotalCarrito{
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color:#212121;
+  }

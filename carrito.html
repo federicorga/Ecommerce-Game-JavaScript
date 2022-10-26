@@ -18,7 +18,7 @@
     <header>
         <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">Zona-Gamer</a>
+            <a class="navbar-brand" href="carrito.html">Zona-Gamer</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -49,25 +49,29 @@
     <main>
       <section class="SeccionCarritoHTML">
         <div id="carritoListaTotal">
-            <table id="tablaCarrito">
+            <table class="tablaCarrito">
                 <thead>
                     <tr>
                         <th class="product-img">&nbsp;</th>
-                        <th class="product-name">Producto</th>
-                        <th class="product-price">Precio</th>
-                        <th class="product-quantity">Cantidad</th>
-                        <th class="product-subtotal">Subtotal</th>
+                        <th class="product-name">PRODUCTO</th>
+                        <th class="product-price">PRECIO</th>
+                        <th class="product-quantity">CANTIDAD</th>
+                        <th class="product-subtotal">SUBTOTAL</th>
                         <th class="product-remove">&nbsp;</th>
                     </tr>
                 </thead>
+                <tbody id="tablaCarrito">
+                  
+                </tbody>
     
             </table>
+            
             <div class="contenedorLimpiarCarrito">
                 <button class="limpiarCarrito" id="limpiarCarrito">Limpiar Carrito</button>
             </div>
         </div>
 
-        <div id="cardTotal">
+        <div id="cardTotal" class="cardTotal">
           
         </div>
       </section>

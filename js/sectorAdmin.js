@@ -94,14 +94,6 @@ const CatalogoAdmin=()=>{ //Me permite filtrar en la barra de busqueda al vincul
 
 }
 
-const eliminarObjetoDeArray = (id,array) => {
-  const producto = array.find((producto) => producto.id === id);
-  const indice = array.indexOf(producto);
-  array.splice(indice, 1);
-
-  //LocalStorage:
-  console.log("Se Elimino Juego")
-}
 
 barraBuscadorAdmin.addEventListener('keyup', CatalogoAdmin); //filtra letra por letra
 

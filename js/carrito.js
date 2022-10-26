@@ -4,13 +4,14 @@
 
 function renderJuegoCarritoHTML(listaJuegoCarrito){
     
-    const tbody = document.createElement("tbody");
+    const tbody = document.createElement("tr");
+    tbody.classList.add("juegoEnCarritoContenedor");
 
     tbody.innerHTML+=`
-    <tr class="juegoEnCarritoContenedor">
-        <td> <img src="${listaJuegoCarrito.imagen}" class="imgJuegoCarrito" alt="${listaJuegoCarrito.nombreJuego}" width="100px"></td>
+   
+        <td> <img src="${listaJuegoCarrito.imagen}" class="imgJuegoCarrito" alt="${listaJuegoCarrito.nombreJuego}" width="95px"></td>
         <td><h3 class="nombreJuegoCarrito">${listaJuegoCarrito.nombreJuego}</h3></td>
-        <td><h5 class="precioCarrito">ARS$${(listaJuegoCarrito.precio)}</h5></td>
+        <td><h5 class="precioCarrito">$${(listaJuegoCarrito.precio)}</h5></td>
         <td>
             <input id="btnResta${listaJuegoCarrito.id}" class="btnRe" type="button" value="-">
 
@@ -19,9 +20,9 @@ function renderJuegoCarritoHTML(listaJuegoCarrito){
             <input id="btnSuma${listaJuegoCarrito.id}" class="btnSu" value="+" type="button">
         </td>
 
-        <td><h5 class="subTotalCarrito">ARS$${(listaJuegoCarrito.precio * listaJuegoCarrito.cantidad).toFixed(2)}</h5></td>
-        <td>"Eliminar"</td>
-    <tr>`
+        <td><h5 class="subTotalCarrito">$${(listaJuegoCarrito.precio * listaJuegoCarrito.cantidad).toFixed(2)}</h5></td>
+        <td><a href="#" id="btnEliminar${listaJuegoCarrito.id}"><img src="img/tachoBasura.png"" class="tachoBasuraCarrito" alt="tacho${listaJuegoCarrito.id}" width="30px"></a></td>
+    `
 
     tablaCarrito.appendChild(tbody);
 
@@ -33,10 +34,16 @@ function renderJuegoCarritoHTML(listaJuegoCarrito){
     })
     const btnSumaCantidad= document.getElementById(`btnSuma${listaJuegoCarrito.id}`);
     btnSumaCantidad.addEventListener("click",()=>{
-        suma(listaJuegoCarrito.id);
+        suma(listaJuegoCarrito.id);       
+    })
+
+    const btnEliminarJuego= document.getElementById(`btnEliminar${listaJuegoCarrito.id}`);
+    btnEliminarJuego.addEventListener("click", ()=>{
+        eliminarObjetoDeCarrito(listaJuegoCarrito.id);
+        MostrarProductoEnCarrito();
+        mostrarValorCarritoIcon();
         
-        
-           
+
     })
 
 }
@@ -94,33 +101,32 @@ function MostrarProductoEnCarrito(){
    
 }
 
-
-
 function renderCardCarritoTotal(){
 
     const divTotal=document.createElement("div");
 
+    divTotal.classList.add("boxCardTotal");
     divTotal.innerHTML=`
-      <h2>Total Carrito</h2>
-      <table>
-            <tbody>
-            <tr>
+      <h2 class="TituloTotalCarrito">TOTAL CARRITO</h2>
+      <table class="tableTotalCar">
+            <tbody class="tbodyTotalCar">
+            <tr class="trTotalCar">
                 <th>Subtotal</th>
                 <td>
-                <span>ARS$${(SubtotalPrecioCarrito())}</span>
+                <span>ARS$${(SubtotalPrecioCarrito().toFixed(2))}</span>
                 </td>
             </tr>
-            <tr>
+            <tr class="trTotalCar">
                 <th>Envio</th>
                 <td>
                 <label for="CheckBoxEnvio"><span>ARS$${300}</span></label>
-                <input type="checkbox" name="CheckBoxEnvio">
+                <input id="checkBoxEnvio" type="checkbox" name="CheckBoxEnvio">
                 </td>
             </tr>
-            <tr>
+            <tr class="trTotalCar">
                 <th>TOTAL</th>
                 <td>
-                <span>${(SubtotalPrecioCarrito()+300)}</span>
+                <span>ARS$${"pepito"}</span>
                 </td>
             </tr>
             </tbody>
@@ -129,6 +135,7 @@ function renderCardCarritoTotal(){
     cardTotal.appendChild(divTotal);
 }
 
+
 function MostrarCardTotal(){
     //Esta funcion permite capturar los juegos añadidos al localStorage y mostrarlos en carrit.html.
     
@@ -136,22 +143,11 @@ function MostrarCardTotal(){
 
     if(localStorage.getItem("carrito")){
         renderCardCarritoTotal();
-
-    }
-    
-
-        
+    }    
 }
-    
-    
-    
-   
-
-
-
-
 LimpiarCarritoBtnClick();
 MostrarProductoEnCarrito();
+
 
 
 

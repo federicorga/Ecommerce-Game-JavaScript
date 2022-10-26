@@ -30,6 +30,7 @@ function mostrarListaObjetosenSeccionHTML(sectionID, lista, propiedaObjeto) {
         
         console.log(`Se agrego ${productoJuego.nombreJuego} al Carrito!`);
     }
+
     localStorage.setItem("carrito",JSON.stringify(carrito));
     mostrarValorCarritoIcon();
     totalPrecioCarrito();
@@ -37,14 +38,13 @@ function mostrarListaObjetosenSeccionHTML(sectionID, lista, propiedaObjeto) {
 
 function mostrarValorCarritoIcon(){
 
-if(localStorage.getItem("carrito")){
-    carrito = JSON.parse(localStorage.getItem("carrito"));
+
+carrito = JSON.parse(localStorage.getItem("carrito")) || []; //Verifica si el carrito esta vacio o no.
+
+console.log(carrito)
     
-  }
   actualizarValorCarrito();
 }
-
-
 
 function actualizarValorCarrito(){
 
@@ -59,6 +59,17 @@ const eliminarTodoElCarrito = () => {
     actualizarValorCarrito();   
 }
 
+const eliminarObjetoDeCarrito = (id) => {
+    const producto = carrito.find((producto) => producto.id === id);
+    const indice = carrito.indexOf(producto);
+    carrito.splice(indice, 1);
+    localStorage.setItem("carrito",JSON.stringify(carrito));
+    
+  
+    //LocalStorage:
+    console.log(`Se elimino Juego: ${producto.nombreJuego} del Carrito.`)
+  }
+
 
 function SubtotalPrecioCarrito(){
 
@@ -67,12 +78,16 @@ function SubtotalPrecioCarrito(){
         CompraTotal+= juego.precio*juego.cantidad;
       
     });
-    // totalCarrito.innerHTML= `Total: $${CompraTotal}`;
-    console.log("Precio Total: $" + CompraTotal);
+    console.log("Precio Subtotal: $" + CompraTotal);
     return CompraTotal;
 
 }
 
+function totalPrecioCarritos(){
+    const checkBoxEnvio = document.getElementById("checkBoxEnvio");
+    console.log(checkBoxEnvio);
+}
+totalPrecioCarritos();
 
 
 function LimpiarCarritoBtnClick(){
