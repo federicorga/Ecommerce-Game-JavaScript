@@ -59,18 +59,15 @@ function suma(id){
 function resta(id){
 
     const juegoEnCarrito= carrito.find((juego)=> juego.id === id);
-    
-    if(juegoEnCarrito.cantidad){
+    if(juegoEnCarrito.cantidad>1){
         
         juegoEnCarrito.cantidad--;
-        
-        
         localStorage.setItem("carrito",JSON.stringify(carrito));
         MostrarProductoEnCarrito();
           
     }else{
 
-        juegoEnCarrito.cantidad--;
+        juegoEnCarrito.cantidad=1;
         
         localStorage.setItem("carrito",JSON.stringify(carrito));
         MostrarProductoEnCarrito();
