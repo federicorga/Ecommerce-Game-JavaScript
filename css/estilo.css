@@ -1,0 +1,341 @@
+  
+  *,*:after, *:before{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    
+  }
+
+.bodyIndex{
+    font-family: Helvetica,Sans-serif;
+  
+    background: url(../img/fond2.jpg);
+
+    background-size:contain;
+
+  }
+
+  .bodyAdmin{
+
+    background-color: #ffffff;
+  }
+
+  header{
+    position: sticky;
+    top:0;
+    z-index: 5;
+  }
+  .liMenu{
+    justify-content: flex-end;
+
+  }
+
+  .liCarrito{
+
+     margin-right: 44px;
+  }
+
+  .liCarrito a{
+    position: relative;
+    height: 28px;
+    width: 28px;
+  }
+
+  .iconCarrito{
+    display: flex;
+    background: url(../img/carritoicono.png);
+    background-size: cover;
+    background-position: center;
+    font-size: 18px;
+    text-align: center;
+    height: 28px;
+    width: 28px;
+    filter: invert(99%) sepia(4%) saturate(306%) hue-rotate(153deg) brightness(118%) contrast(90%);
+    
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .iconNumCarrito{
+    position: absolute;
+    border-radius: 50%;
+    left: 27px;
+    bottom: 22px;
+    width: 14px;
+    text-align: center;
+    background-color: rgb(255, 0, 0);
+    color: #FFF;
+    letter-spacing: 0;
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 14px;
+  }
+
+  /*-------------------------------------------------------- Estilo indicador de carga Web */
+
+
+
+
+
+#contenedor_carga{
+    background: rgb(250, 240, 245);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    z-index: 10000;
+    
+  }
+
+  #carga{
+
+    border: 15px solid #ccc;
+    border-top-color: #1bf069;
+    border-top-style: groove;
+    height: 90px;
+    width: 90px;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    -webkit-animation: girar 1.5s linear infinite;
+    -o-animation: girar 1.5s linear infinite;
+    animation: girar 1.5s linear infinite;
+  }
+
+  @keyframes girar {
+    from { transform: rotate(0deg) ;}
+    to{ transform: rotate(360deg) ;}
+  }
+
+/*--------------------------------------------------------------------------*/
+
+.ContenedorBarraBusqueda{
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-left: 200px;
+  margin-right: 200px;
+
+}
+
+  .seccionCatalogo{
+    
+    background-color: #ffffff96;
+  }
+
+  .catalogoContenedor{
+    display: flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+  }
+
+  h1{
+   text-align: center;
+    color: rgb(0, 255, 247);
+  }
+
+  .tarjeta{
+    width: 17.5rem;
+    margin-top: 20px;
+    background-color: #1b2838;
+  }
+
+
+
+  .tarjeta h2{
+    font-size: inherit;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+    padding-bottom: 2px;
+    
+  }
+
+  .tarjeta h4{
+    color:#9099a1;
+    font-size: 1rem;
+    
+  }
+
+  .imgCard{
+    background-color: none;
+  
+  }
+  .imgCard:hover{
+    transition: 0.5s;
+    transform: scale(1.05);
+  }
+
+  .precioCard{
+    color:#acdbf5;
+    text-align: center;
+    padding-top: 5px;
+    font-size: inherit;
+  }
+
+  .informacionTarjeta{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .notFoundGame{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carruselNovedades{
+    margin-bottom: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 100px;
+  }
+
+
+
+  /*-----------------------------------------------------------*/
+
+  .formularioGeneradorJuego{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .menuCatalogo{
+    background-color: wheat;
+  }
+
+
+  /*-----------------------------BOTONES DOM-----------------------------*/
+
+
+
+
+  .btn{
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    background: #6fa720;
+    background: -webkit-linear-gradient( top, #6fa720 5%, #588a1b 95%);
+    background: linear-gradient( to bottom, #6fa720 5%, #588a1b 95%);
+    background: linear-gradient( to right, #75b022 5%, #588a1b 95%);
+    border:#1b2838 ;
+    margin-bottom: 4px;
+    color:#c2c2c2;
+    
+  }
+
+
+ 
+.btnAgregar:hover{
+  transition: 0.5s;
+  color:#FFF!important; 
+}
+
+
+  .iconBtnCarrito{
+    display: flex;
+    background: url(../img/carritoicono.png);
+    background-size: cover;
+    background-position: center;
+    font-size: 18px;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    margin-left: 5px;
+    filter: invert(99%) sepia(4%) saturate(306%) hue-rotate(153deg) brightness(118%) contrast(90%);
+    
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+
+
+  .menuYSeccion{
+    display: flex;
+    margin-left: 170px;
+    margin-right: 190px;
+  }
+
+
+  /*-------------------------------------CARRITO PAGINA---------------*/
+
+  .juegoEnCarritoContenedor{
+  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .juegoEnCarritoContenedor td{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    padding: 10px;
+}
+
+.btnSu{
+  padding: 0 5px;
+  min-width: 25px;
+  height: 42px;
+  border: 1px solid #3939394a;
+  border-radius: 0% 30% 30% 0%;
+  background: transparent;
+  box-shadow: none;
+}
+
+.cantidadCarrito{
+  display: flex;
+  border: 1px solid #3939394a;
+  width: 30px;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.btnRe{
+  padding: 0 5px;
+  min-width: 25px;
+  border: 1px solid #3939394a;
+  height: 42px;
+  border-radius: 30% 0% 0% 30%;
+  background: transparent;
+  box-shadow: none;
+
+}
+
+.contenedorLimpiarCarrito{
+  text-align: center;
+  width: auto;
+  height: auto;
+}
+
+.limpiarCarrito{
+  color: #FFF;
+  background-color: rgb(17 59 187);
+  width: 135px;
+  height: 46px;
+  text-align: center;
+  border-radius: 26px;
+  border: none;
+}
+
+
+.SeccionCarritoHTML{
+  display: flex;
+}
+  
