@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="css/estilo.css">
     <title>Zona-Gamer</title>
 </head>
@@ -18,9 +20,9 @@
 
   <header>
 
-    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg myNav">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Zona-Gamer</a>
+        <a class="navbar-brand tituloPrincipal" href="#"><img src="img/gamespace.png" alt="icono" class="imgPrincipal"><h1>Zona-Gamer</h1></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,7 +38,7 @@
           <ul class="navbar-nav">  
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="sectorAdmin.html">Admin</a>
@@ -85,27 +87,16 @@
 
 
       <section class="principalTotal">
-
+      <section class="SeccionBarraBusqueda">
+        <h1>TIENDA</h1>
       <div class="ContenedorBarraBusqueda">
         <input type="text" id="barraBuscador" class="form-control my-2 barraBuscador" placeholder="Buscar...">
       </div>
+    </section>
       <section class="menuYSeccion">
         <section class="menuCatalogo" id="menuCatalogo">
-          
-          <ul>
-            <li  id="plataformaLi" class="liFiltro">Plataforma
-
-      
-            </li>
-            <li id="generoLi" class="liFiltro">Genero
-             
-            </li>
-            <li  id="idiomaLi"class="liFiltro">Idioma
-              
-            </li>
-              </ul>
-            </li>
-          </ul>
+          <h2 class="tituloCategorias">CATEGORIAS</h2>
+       
 
         </section>
 
@@ -118,7 +109,7 @@
             </div>
 
         </section>
-        
+       
 
       </section>
     </section>
@@ -132,9 +123,9 @@
   
     
     <script src="js/catalogoJuegos.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/funcionesHerramienta.js"></script>
-    <script src="js/buscadorCatalogo.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/buscadorYFiltros.js"></script>
     
    
     

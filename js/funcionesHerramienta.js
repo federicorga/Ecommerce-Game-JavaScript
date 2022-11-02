@@ -20,7 +20,9 @@ function mostrarListaObjetosenSeccionHTML(sectionID, lista, propiedaObjeto) {
   const agregarAlCarrito= (id)=>{
 
     const productoJuego= listaJuegos.find((juego) => juego.id === id);
+
     const juegoEnCarrito= carrito.find((juego)=> juego.id === id);
+
     if(juegoEnCarrito){
         juegoEnCarrito.cantidad++;
         console.log(`se agrego otro ${juegoEnCarrito.nombreJuego} al Carrito!`);
@@ -38,10 +40,11 @@ function mostrarListaObjetosenSeccionHTML(sectionID, lista, propiedaObjeto) {
 
 function mostrarValorCarritoIcon(){
 
-
 carrito = JSON.parse(localStorage.getItem("carrito")) || []; //Verifica si el carrito esta vacio o no.
 
 console.log(carrito)
+
+
     
   actualizarValorCarrito();
 }
@@ -56,7 +59,7 @@ const eliminarTodoElCarrito = () => {
     //LocalStorage.
     carrito=[];
     localStorage.clear();
-    actualizarValorCarrito();   
+    actualizarValorCarrito(); 
 }
 
 const eliminarObjetoDeCarrito = (id) => {
@@ -84,10 +87,16 @@ function SubtotalPrecioCarrito(){
 }
 
 function totalPrecioCarritos(){
-    const checkBoxEnvio = document.getElementById("checkBoxEnvio");
-    console.log(checkBoxEnvio);
+
+    const valor = SubtotalPrecioCarrito();
+    if(checkBoxEnvio.checked===true){
+        return valor+300;
+    }else{
+        return valor;
+    }
+   
 }
-totalPrecioCarritos();
+
 
 
 function LimpiarCarritoBtnClick(){
@@ -102,4 +111,4 @@ function LimpiarCarritoBtnClick(){
     }
 
 
-   mostrarValorCarritoIcon();
+  

@@ -120,6 +120,7 @@ listaJuegos.push(assassinsCreed, ageOfEmpires2, stray, fifastreet, CoDWWII,lastU
 listaJuegos.push(halfLife2, RE2, darkSoulIII, redredemption, cyberPunk, Bt2042, ShadowofWar, SCPSecret, GrimFandango, dragonBall);
 
 
+
 function maximoId(){ //Devuelve el Numero ID Maximo de la lista juegos;
 
 const listaDeIds=[];
@@ -133,5 +134,6 @@ listaJuegos.forEach(element => {
 const maximoId = Math.max(...listaDeIds);//con los (...) puedo sacar el maximo de un array de numeros.
 return maximoId; 
 }
+
 }
 

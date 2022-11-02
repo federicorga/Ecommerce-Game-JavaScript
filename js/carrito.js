@@ -85,20 +85,17 @@ function resta(id){
 }
 
 function MostrarProductoEnCarrito(){
-    //Esta funcion permite capturar los juegos añadidos al localStorage y mostrarlos en carrit.html.
+    //Esta funcion permite capturar los juegos añadidos al localStorage y 
+    //mostrarlos
     tablaCarrito.innerHTML='';
     
-
     if(localStorage.getItem("carrito"))
     carrito.forEach((juego)=>{
         renderJuegoCarritoHTML(juego);
 
-        
     })
-
-    MostrarCardTotal();
+    MostrarCardTotal()
     
-   
 }
 
 function renderCardCarritoTotal(){
@@ -120,33 +117,64 @@ function renderCardCarritoTotal(){
                 <th>Envio</th>
                 <td>
                 <label for="CheckBoxEnvio"><span>ARS$${300}</span></label>
-                <input id="checkBoxEnvio" type="checkbox" name="CheckBoxEnvio">
+                <input id="checkBoxEnvio" type="checkbox" name="CheckBoxEnvio" value="${300}">
                 </td>
             </tr>
             <tr class="trTotalCar">
                 <th>TOTAL</th>
                 <td>
-                <span>ARS$${"pepito"}</span>
+                <span class="precioTotal" id="spaneando">ARS$${(SubtotalPrecioCarrito().toFixed(2))}</span>
                 </td>
             </tr>
             </tbody>
       </table>
+      <section class="SeccionBtnCompra">
+      <button class="limpiarCarrito" id="realizarCompra">Comprar</button>
+      </section>
     `
     cardTotal.appendChild(divTotal);
+
+    const checkBoxEnvio =document.getElementById("checkBoxEnvio");
+    checkBoxEnvio.addEventListener("click", ()=>{
+        
+    const spaneando = document.getElementById("spaneando");
+    spaneando.innerHTML='';
+    spaneando.innerHTML=`ARS$${totalPrecioCarritos().toFixed(2)}`
+        
+    })
 }
 
 
+
+
 function MostrarCardTotal(){
-    //Esta funcion permite capturar los juegos añadidos al localStorage y mostrarlos en carrit.html.
+    //Esta funcion muestra una seccion con el calculo
+    //total y subtotal de los juegos añadidos en le LocalStorage
+    //y su boton de confirmacion para compra.
     
     cardTotal.innerHTML='';
 
     if(localStorage.getItem("carrito")){
         renderCardCarritoTotal();
     }    
+
 }
-LimpiarCarritoBtnClick();
-MostrarProductoEnCarrito();
+
+
+function EjecutarVistaDeCarritoCompleta(){
+    MostrarCardTotal();
+    MostrarProductoEnCarrito();
+     //Ejecuta al actualizar, cambiar esto con lo aprendido en clase.
+    
+
+}
+
+//----------------------------------------Ejecutar
+
+LimpiarCarritoBtnClick(); //Activa el boton de Limpiar carrito en carrito.html
+
+mostrarValorCarritoIcon(); //Muestra el N° de juegos agregados en el icono del carrito NavBar
+MostrarProductoEnCarrito();//Muestra los juegos agregados y su total en carrito.html
 
 
 
