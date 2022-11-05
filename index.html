@@ -4,39 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="css/estilo.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- TOASTIFY -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Zona-Gamer</title>
 </head>
 <body class="bodyIndex">
-    
-    <div id="contenedor_carga">
-        <div id="carga"></div>
-      </div>
+
+  <div id="contenedor_carga" class="cargaPag">
+    <div id="carga"></div>
+    <img src="img/31.gif" alt="icono" class="imgPrincipal">
+  </div>
 
   <header>
 
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg myNav">
       <div class="container-fluid">
-        <a class="navbar-brand tituloPrincipal" href="#"><img src="img/gamespace.png" alt="icono" class="imgPrincipal"><h1>Zona-Gamer</h1></a>
+        <a class="navbar-brand tituloPrincipal" href="#"><img src="img/gamboy2.png" alt="icono" class="imgPrincipal"><h1>GAMER-ZONE</h1></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
        
         <div class="collapse navbar-collapse liMenu" id="navbarNav">
-          <div class="liCarrito" id="liCarrito">
-            <a href="carrito.html" title="Carrito de Compra" >
-                <span class="iconCarrito">
-                </span>
-                <span class="iconNumCarrito" id="iconNumCarrito">0</span>
-            </a>
-          </div>
+          
           <ul class="navbar-nav">  
-            </li>
+            <li class="nav-item"><div class="liCarrito" id="liCarrito">
+              <a href="carrito.html" title="Carrito de Compra" >
+                  <span class="iconCarrito"></span>
+                  <span class="iconNumCarrito" id="iconNumCarrito">0</span>
+              </a>
+            </div></li>
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="index.html">Home</a>
             </li>
@@ -53,6 +57,7 @@
   
 
     <main>
+
 
 
       <section class="carruselNovedades"> 
@@ -88,7 +93,7 @@
 
       <section class="principalTotal">
       <section class="SeccionBarraBusqueda">
-        <h1>TIENDA</h1>
+        <h2>TIENDA</h2>
       <div class="ContenedorBarraBusqueda">
         <input type="text" id="barraBuscador" class="form-control my-2 barraBuscador" placeholder="Buscar...">
       </div>
@@ -103,16 +108,29 @@
    
 
         <section class="seccionCatalogo">
+          
 
             <div id="catalogoContenedor" class="catalogoContenedor" >
 
             </div>
+            
 
         </section>
        
-
+        
       </section>
+      <div
+      id="desplazador"
+      class="desplazador"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom">
+      <a href="#" aria-label="Boton up"
+        ><img src="img/flechaup.webp" alt="flechaup"
+      /></a>
+      </div>
     </section>
+
+  
     
     </main>
 
@@ -122,16 +140,27 @@
 
   
     
-    <script src="js/catalogoJuegos.js"></script>
-    <script src="js/funcionesHerramienta.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/buscadorYFiltros.js"></script>
+ 
     
    
-    
+   
     
     <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+<!-- TOASTIFY -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script> 
+ <!-- AOS -->
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script>
+   AOS.init();
+ </script>
+
+    <!-- PAGINAS JS -->
+ <script src="js/catalogoJuegos.js"></script>
+ <script src="js/funcionesHerramienta.js"></script>
+ <script src="js/main.js"></script>
+ <script src="js/buscadorYFiltros.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Rammetto+One&family=Stick+No+Bills:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Poppins:wght@300&family=Rammetto+One&family=Stick+No+Bills:wght@300&display=swap');
   
   *,*:after, *:before{
     margin: 0;
@@ -96,6 +98,42 @@
     line-height: 14px;
   }
 
+
+
+  /*-----------------------------------FOOTER*/
+  .desplazador {
+    position: fixed;
+    display: flex;
+    cursor: pointer;
+    right: 1.2rem;
+    margin-top: 10px;
+    bottom: 100px; }
+    
+  .desplazador a {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    position: absolute;
+    display: flex;
+    cursor: pointer;
+    right: 1.2rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50px;
+    background: #0093ddb3;
+    align-content: stretch;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    }
+  .desplazador a:hover {
+        transition: 0.5s;
+        transform: scale(1.1); }
+  .desplazador a:active {
+        transition: 0.2s;
+        transform: scale(0.8); }
+
   /*-------------------------------------------------------- Estilo indicador de carga Web */
 
 
@@ -103,16 +141,19 @@
 
 
 #contenedor_carga{
-    background: rgb(250, 240, 245);
-    height: 100%;
+  background: radial-gradient(63.94% 1024px at 50% 200px, #244372 0%, #161A1F 100%);
+  background-size: contain;
     width: 100%;
+    height: 100%;
     display: flex;
+    position: fixed;
     justify-content: center;
     align-items: center;
     -webkit-transition: all 1s ease;
     -o-transition: all 1s ease;
     transition: all 1s ease;
-    z-index: 10000;
+    z-index: 1000;
+    top:0;
     
   }
 
@@ -155,7 +196,7 @@
   padding-left: 14px;
 
 }
-.SeccionBarraBusqueda h1{
+.SeccionBarraBusqueda h2{
   font-family: "Motiva Sans", Sans-serif;
   color: #b8b6b4;
   letter-spacing: 1px;
@@ -219,8 +260,10 @@
   h1{
     text-align: center;
     color: rgb(255, 255, 255);
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin: 0;
+    letter-spacing: 1px;
+    font-family: 'Stick No Bills', sans-serif;
   }
 
   .imgPrincipal{
@@ -370,6 +413,7 @@
     max-height: 0px;
     transition:all 0.5s ease-in-out;
     opacity: 0;
+   
     
   }
    /*Me permite animar el filtro para que se expanda y se contraiga*/
@@ -378,6 +422,7 @@
     max-height: 300px;
     opacity: 100;
     transition:all 1s ease-in-out;
+    
   }
 
   .desocultar_toggle li:hover{
@@ -420,7 +465,7 @@
 
 
   .btn{
-    border-radius: 2px;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     background: #6fa720;
@@ -450,6 +495,8 @@
   transition: 0.3s;
   transform: scale(0.9);
 }
+
+
 
 
   .iconBtnCarrito{
@@ -487,14 +534,30 @@
   }
 
   .boxCardTotal{
-    border: 1px solid gray;
-    padding: 10px;
-    width: 15rem;
+    border: 3px solid #EFEFEF;
+    padding: 21px;
+    width: 25rem;
+    margin-top: 78px;
   }
-    
+
+  .boxCardTotalOrden {
+    border: 3px solid #EFEFEF;
+    padding: 21px;
+    width: 35rem;
+    margin-top: 78px;
+  }
+  
+  .tituloOrden{
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: #212121;
+    text-align: center;
+}
+  
 
   .tablaCarrito{
     width: 100%;
+    margin-top: 87px;
 
   }
 
@@ -580,6 +643,11 @@
   color:#FFF;
 }
 
+.tachoBasuraCarrito:hover{
+  transition: 0.5s;
+  transform: scale(1.2);
+}
+
 .precioCarrito{
   font-size: 1.1rem;
   color: #777;
@@ -595,6 +663,7 @@
   width: auto;
   height: auto;
   padding-top: 14px;
+  margin-bottom: 20px
 }
 
 .limpiarCarrito{
@@ -629,11 +698,23 @@ align-items: flex-start;
 }
 
 .trTotalCar{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #E6E6E6;
+  }
+
+  .trTotal{
     display: flex;
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 7px;
+    margin-top: 17px;
+    padding-bottom: 8px;
+    font-size: 1.1rem;
   }
 
   .precioTotal{
@@ -646,6 +727,7 @@ align-items: flex-start;
     font-size: 1.4rem;
     line-height: 1.4;
     color:#212121;
+    font-weight: 700;
   }
 
   .SeccionBtnCompra{
@@ -653,4 +735,259 @@ align-items: flex-start;
     margin-top: 20px;
   }
 
+  .btnCompra {
+    color: #FFF;
+    background-color: rgb(17 59 187);
+    width: 135px;
+    height: 46px;
+    text-align: center;
+    border-radius: 26px;
+    border: none;
+  }
 
+  .btnCompra a{
+    text-decoration: none;
+    color: #FFF;
+  }
+
+  .btnCompra:hover{
+    transition: 0.5s;
+    background-color: #588a1b;
+  }
+
+  .btnCompra:active{
+    transition: 0.3s;
+    transform: scale(0.9);
+  }
+
+.SeccionCompraHTML{
+     display: flex;
+    padding-top: 50px;
+    margin-bottom: 20px;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.tablaCompraHead{
+  margin-top: 78px;
+}
+.tablaCompraHead thead tr th{
+  padding-left: 20px;
+}
+
+.tBodyCompra td{
+  
+  padding-left: 25px;
+
+}
+
+
+
+/*-----------------------TARJETA DE CREDITO */
+
+.contenedorTarjeta {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 27px;
+
+}
+
+
+
+.cred {
+  position: relative;
+  width: 508px;
+  height: 314px;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  z-index: 2;
+  
+}
+
+.cred .face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: linear-gradient(337deg,rgb(84 56 110) , #000d2ee0);
+  backdrop-filter: blur(28px);
+  transform-style: preserve-3d;
+  transition: 1s;
+  backface-visibility: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.textBoxCard{
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  background: none;
+}
+
+
+
+.cred .face.back {
+  transform: rotateY(180deg);
+}
+
+
+
+.cred .face.front::before {
+  content:'';
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.cred .face.front::after {
+  content:'';
+  position: absolute;
+  bottom: 40px;
+  right: 80px;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.cred .face.front .debit {
+  position: absolute;
+  left: 40px;
+  top: 30px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.cred .face.front .bank {
+  color: #fff;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 24px;
+}
+
+.cred .face.front .chip {
+  position: absolute;
+  top: 80px;
+  left: 50px;
+  max-width: 64px;
+}
+
+.cred .face.front .number {
+  position: absolute;
+  bottom: 130px;
+  left: 40px;
+  font-weight: 500;
+  letter-spacing: 6px;
+  font-size: 18px;
+  text-shadow: 0 2px 1px #0005;
+  font-family: 'Orbitron', sans-serif;
+  color: gray;
+}
+
+.cred .face.front .valid {
+  position: absolute;
+  bottom: 90px;
+  left: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 300;
+  line-height: 1em;
+  text-align: right;
+}
+
+.cred .face.front .valid span:last-child {
+  margin-left: 20px;
+  font-size: 16px;font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.cred .face.front .cred-holder {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.bancCard{
+  position: absolute;
+  right: 0px;
+  top: 26px;
+  width: 186px;
+  font-weight: 500;
+  letter-spacing: 6px;
+  text-shadow: 0 2px 1px #0005;
+  font-family: 'Orbitron', sans-serif;
+  color: gray;
+}
+
+
+.numTarjCard{
+  font-weight: 500;
+  letter-spacing: 6px;
+  font-size: 18px;
+  text-shadow: 0 2px 1px #0005;
+  font-family: 'Orbitron', sans-serif;
+  color: gray;
+}
+
+
+.ValidCard{
+  font-weight: 500;
+  letter-spacing: 6px;
+  font-size: 15px;
+  text-shadow: 0 2px 1px #0005;
+  font-family: 'Orbitron', sans-serif;
+  color: gray;
+  margin-left: 16px;
+  width: 66px;
+}
+
+.nombApCard{
+  font-weight: 500;
+    letter-spacing: 6px;
+    font-size: 15px;
+    text-shadow: 0 2px 1px #0005;
+    font-family: 'Orbitron', sans-serif;
+    color: gray;
+    width: 15rem;
+  
+}
+
+.btnConfirm{
+  color: #FFF;
+  background-color: rgb(17 59 187);
+  width: 150px;
+  height: 46px;
+  text-align: center;
+  border-radius: 26px;
+  border: none;
+}
+
+.seccionDatos{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 22px;
+  margin-bottom: 30px;
+}

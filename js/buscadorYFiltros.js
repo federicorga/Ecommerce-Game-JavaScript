@@ -25,10 +25,22 @@ function renderJuegoHTML(game)
 
 	btnAgregarCarro.addEventListener("click",()=>{
 		agregarAlCarrito(game.id);
+        Toastify({
+            text:`${game.nombreJuego} agregado al carrito`,
+            duration: 1200,
+            gravity: "bottom",
+            position: "right",
+            //destination: "https://www.google.com",
+            style:
+            {
+                background: "linear-gradient(to right, rgb(11 81 183), rgb(33 67 114))",
+            }
+            //className: "tuNOmbredeClase",
+        }).showToast();
 	})
 }
 
-function MostrarCatalogo(catalogoContenedor,propiedadObjeto,textoBuscador=""){
+function MostrarCatalogo(catalogoContenedor,propiedadObjeto,textoBuscador=''){
 
     //Esta funcion me permite traer todo el catalogo o una parte de acuerdo a lo especificado en
     // sus parametros
@@ -36,7 +48,6 @@ function MostrarCatalogo(catalogoContenedor,propiedadObjeto,textoBuscador=""){
     catalogoContenedor.innerHTML= ''; //actualizo el Catalogo
 
     const TextoMin=textoBuscador.toLowerCase();
-    console.log(TextoMin);
     
     listaJuegos.forEach((listaGame)=> {
 
@@ -63,9 +74,10 @@ function MostrarCatalogo(catalogoContenedor,propiedadObjeto,textoBuscador=""){
 
 function BusquedaDeJuego(){ //Me permite filtrar en la barra de busqueda al vincularlo.
     //muestra todo el catalogo si la barra de busqueda esta vacia.
+    
     const barraBuscador= document.getElementById("barraBuscador");
     const textoBuscador = barraBuscador.value;
-    MostrarCatalogo(catalogoContenedor,"nombreJuego",textoBuscador)
+    MostrarCatalogo(catalogoContenedor,"nombreJuego",textoBuscador);
     barraBuscador.addEventListener('keyup', BusquedaDeJuego); //filtra letra por letra
 }
 
@@ -206,9 +218,14 @@ function EjecutarFiltroCatalogo(){
 
 //------------------------------------------------Ejecutar
 
-BusquedaDeJuego(); //Muestra en index.html el catalogo y activa la barra de busqueda.
+setTimeout(()=>{
+    BusquedaDeJuego();//Muestra en index.html el catalogo y activa la barra de busqueda.
+    console.log("Catalogo añadido a la Web!...")
+}, 0300)
+
 EjecutarFiltroCatalogo(); //Ejecuto la lista de Categorias para Filtrar.
 mostrarValorCarritoIcon(); //Muestra el N° de juegos agregados en el icono del carrito NavBar
+
 
 
 

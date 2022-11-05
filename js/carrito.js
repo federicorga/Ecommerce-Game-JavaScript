@@ -120,7 +120,7 @@ function renderCardCarritoTotal(){
                 <input id="checkBoxEnvio" type="checkbox" name="CheckBoxEnvio" value="${300}">
                 </td>
             </tr>
-            <tr class="trTotalCar">
+            <tr class="trTotal">
                 <th>TOTAL</th>
                 <td>
                 <span class="precioTotal" id="spaneando">ARS$${(SubtotalPrecioCarrito().toFixed(2))}</span>
@@ -129,7 +129,7 @@ function renderCardCarritoTotal(){
             </tbody>
       </table>
       <section class="SeccionBtnCompra">
-      <button class="limpiarCarrito" id="realizarCompra">Comprar</button>
+      <button class="btnCompra" id="realizarCompra" ><a href="/compraConfirm.html">COMPRAR</a></button>
       </section>
     `
     cardTotal.appendChild(divTotal);
@@ -141,6 +141,15 @@ function renderCardCarritoTotal(){
     spaneando.innerHTML='';
     spaneando.innerHTML=`ARS$${totalPrecioCarritos().toFixed(2)}`
         
+    })
+
+    const realizarCompra=document.getElementById("realizarCompra");
+    realizarCompra.addEventListener("click", ()=>{
+
+        const precio= `${totalPrecioCarritos().toFixed(2)}`
+        
+        localStorage.setItem("precioDeCompra", JSON.stringify(precio));
+    
     })
 }
 
@@ -160,7 +169,6 @@ function MostrarCardTotal(){
 
 }
 
-
 function EjecutarVistaDeCarritoCompleta(){
     MostrarCardTotal();
     MostrarProductoEnCarrito();
@@ -172,7 +180,6 @@ function EjecutarVistaDeCarritoCompleta(){
 //----------------------------------------Ejecutar
 
 LimpiarCarritoBtnClick(); //Activa el boton de Limpiar carrito en carrito.html
-
 mostrarValorCarritoIcon(); //Muestra el N° de juegos agregados en el icono del carrito NavBar
 MostrarProductoEnCarrito();//Muestra los juegos agregados y su total en carrito.html
 
