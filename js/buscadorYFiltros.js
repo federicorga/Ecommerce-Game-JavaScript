@@ -1,11 +1,9 @@
-const catalogoContenedor= document.getElementById("catalogoContenedor");
-const menuCatalogo =document.getElementById("menuCatalogo");
+const catalogoContenedor = document.getElementById("catalogoContenedor");
+const menuCatalogo = document.getElementById("menuCatalogo");
 
-
-function renderJuegoHTML(game)
-{
-	const card = document.createElement("div");
-	card.innerHTML+=`
+function renderJuegoHTML(game) {
+    const card = document.createElement("div");
+    card.innerHTML += `
 	<div class="card tarjeta animate__animated animate__fadeIn">
 	<img src=${game.imagen} class="card-img-top imgCard" id="${game.nombreJuego}" type="button" alt=${game.nombreJuego}>
 		<div class="card-body informacionTarjeta">
@@ -19,51 +17,60 @@ function renderJuegoHTML(game)
 		</div> 
 	</div>`
 
-	catalogoContenedor.appendChild(card);
-
-	const btnAgregarCarro = document.getElementById(`btnAgregarCarro${game.id}`);
-
-	btnAgregarCarro.addEventListener("click",()=>{
-		agregarAlCarrito(game.id);
+    catalogoContenedor.appendChild(card);
+    const btnAgregarCarro = document.getElementById(`btnAgregarCarro${game.id}`);
+    btnAgregarCarro.addEventListener("click", () => {
+        agregarAlCarrito(game.id);
         Toastify({
-            text:`${game.nombreJuego} agregado al carrito`,
+            text: `${game.nombreJuego} agregado al carrito`,
             duration: 1200,
             gravity: "bottom",
             position: "right",
-            //destination: "https://www.google.com",
             style:
             {
                 background: "linear-gradient(to right, rgb(11 81 183), rgb(33 67 114))",
             }
-            //className: "tuNOmbredeClase",
+
         }).showToast();
-	})
+    })
+
+    const renderInfo= document.getElementById(`${game.nombreJuego}`);
+
+renderInfo.addEventListener("click",()=>{
+    Swal.fire({
+        title: `${game.nombreJuego}`,
+        html: `<p class="pDescripcionGame">${game.descripcion}</p>`,
+        imageUrl: `${game.imagen}`,
+        imageWidth: 202,
+        imageHeight: 240,
+        confirmButtonText: "X",
+        background: `linear-gradient(20deg, #1b2838, #090f16)`,
+        imageAlt: 'Custom image',
+        color: '#9099a1',
+        customClass: {
+            confirmButton:'btnDescripcionGame'
+        },
+        buttonsStyling: false
+      })
+})
 }
 
-function MostrarCatalogo(catalogoContenedor,propiedadObjeto,textoBuscador=''){
 
+
+function MostrarCatalogo(catalogoContenedor, propiedadObjeto, textoBuscador = '') {
     //Esta funcion me permite traer todo el catalogo o una parte de acuerdo a lo especificado en
     // sus parametros
-
-    catalogoContenedor.innerHTML= ''; //actualizo el Catalogo
-
-    const TextoMin=textoBuscador.toLowerCase();
-    
-    listaJuegos.forEach((listaGame)=> {
-
-    const nombreJuego= `${listaGame[`${propiedadObjeto}`]}`;
-    
-      const nombreJuegoMinuscula= nombreJuego.toLowerCase();
-
-      if(nombreJuegoMinuscula.indexOf(TextoMin)!== -1){
-       
+    catalogoContenedor.innerHTML = ''; //actualizo el Catalogo
+    const TextoMin = textoBuscador.toLowerCase();
+    listaJuegos.forEach((listaGame) => {
+        const nombreJuego = `${listaGame[`${propiedadObjeto}`]}`;
+        const nombreJuegoMinuscula = nombreJuego.toLowerCase();
+        if (nombreJuegoMinuscula.indexOf(TextoMin) !== -1) {
             renderJuegoHTML(listaGame);
-      
         }
     })
-    
-    if(catalogoContenedor.innerHTML=== ''){
-        catalogoContenedor.innerHTML=`
+    if (catalogoContenedor.innerHTML === '') {
+        catalogoContenedor.innerHTML = `
         <div class="notFoundGame animate__animated animate__fadeIn">
             <h2>No se han encontrado resultados</h2>
             <img src="img/mario.gif" style="width: 5rem" alt="...">
@@ -72,22 +79,20 @@ function MostrarCatalogo(catalogoContenedor,propiedadObjeto,textoBuscador=''){
     }
 }
 
-function BusquedaDeJuego(){ //Me permite filtrar en la barra de busqueda al vincularlo.
+function BusquedaDeJuego() { //Me permite filtrar en la barra de busqueda al vincularlo.
     //muestra todo el catalogo si la barra de busqueda esta vacia.
-    
-    const barraBuscador= document.getElementById("barraBuscador");
+
+    const barraBuscador = document.getElementById("barraBuscador");
     const textoBuscador = barraBuscador.value;
-    MostrarCatalogo(catalogoContenedor,"nombreJuego",textoBuscador);
+    MostrarCatalogo(catalogoContenedor, "nombreJuego", textoBuscador);
     barraBuscador.addEventListener('keyup', BusquedaDeJuego); //filtra letra por letra
 }
 
 //---------------------------------------------------------------------SECCION FILTROS
 
-function renderFiltroCatalogoHTML(){
-
+function renderFiltroCatalogoHTML() {
     const filt = document.createElement("ul");
-
-    filt.innerHTML+=`
+    filt.innerHTML += `
 
         <li  id="btnGTodos" class="liFiltro">
             <div type="button"class="TitulosFiltros"><h2>TODOS</h2>
@@ -105,7 +110,6 @@ function renderFiltroCatalogoHTML(){
             </ul>
             </section>
         </li>
-
         <li class="liFiltro">
             <div id="btnGGenero" class="TitulosFiltros" type="button">
                 <h2>GENERO</h2>
@@ -122,7 +126,6 @@ function renderFiltroCatalogoHTML(){
             </ul>
             </section>
         </li>
-
         <li class="liFiltro">
             <div id="btnGIdioma" class="TitulosFiltros" type="button">
             <h2>IDIOMA</h2>
@@ -139,86 +142,76 @@ function renderFiltroCatalogoHTML(){
         </li> 
     `
     menuCatalogo.appendChild(filt);
-   
-    const btnGPlataforma=document.getElementById("btnGPlataforma");
-
-    btnGPlataforma.addEventListener("click", ()=>{
-        const seccionPlataforma=document.getElementById("seccionPlataforma");
-        const flechaGiroPLat=document.getElementById("flechaGiroPLat");
+    const btnGPlataforma = document.getElementById("btnGPlataforma");
+    btnGPlataforma.addEventListener("click", () => {
+        const seccionPlataforma = document.getElementById("seccionPlataforma");
+        const flechaGiroPLat = document.getElementById("flechaGiroPLat");
         flechaGiroPLat.classList.toggle("giroFlecha_toggle");
         seccionPlataforma.classList.toggle("desocultar_toggle");
         removerClaseListaToogle(seccionIdioma);
         removerClaseListaToogle(seccionGenero);
     });
-
-    const btnGGenero=document.getElementById("btnGGenero");
-
-    btnGGenero.addEventListener("click", ()=>{
-        
-        const seccionGenero=document.getElementById("seccionGenero");
-        const flechaGiroGenero=document.getElementById("flechaGiroGenero");
+    const btnGGenero = document.getElementById("btnGGenero");
+    btnGGenero.addEventListener("click", () => {
+        const seccionGenero = document.getElementById("seccionGenero");
+        const flechaGiroGenero = document.getElementById("flechaGiroGenero");
         flechaGiroGenero.classList.toggle("giroFlecha_toggle");
         seccionGenero.classList.toggle("desocultar_toggle");
         removerClaseListaToogle(seccionPlataforma);
         removerClaseListaToogle(seccionIdioma);
-         
     });
+    const btnGIdioma = document.getElementById("btnGIdioma");
 
-    const btnGIdioma=document.getElementById("btnGIdioma");
-
-    btnGIdioma.addEventListener("click", ()=>{
-        const seccionIdioma=document.getElementById("seccionIdioma");
-        const flechaGiroIdoma=document.getElementById("flechaGiroIdoma");
+    btnGIdioma.addEventListener("click", () => {
+        const seccionIdioma = document.getElementById("seccionIdioma");
+        const flechaGiroIdoma = document.getElementById("flechaGiroIdoma");
         flechaGiroIdoma.classList.toggle("giroFlecha_toggle");
         seccionIdioma.classList.toggle("desocultar_toggle");
         removerClaseListaToogle(seccionPlataforma);
         removerClaseListaToogle(seccionGenero);
     });
 
-    
 }
 
-function filtrarJuegoPor(valorId,propiedadObjeto,filtro=""){
+function filtrarJuegoPor(valorId, propiedadObjeto, filtro = "") {
     //Esta funcion permite capturar el id, crear el documento
     // y asignarle el evento click que permite filtrar el catalogo
     //todo esto dependiendo de que parametro le parte desea mostrar.
-    valorId =document.getElementById(valorId);
-    valorId.addEventListener("click",()=>{
-        MostrarCatalogo(catalogoContenedor,propiedadObjeto,filtro);
+    valorId = document.getElementById(valorId);
+    valorId.addEventListener("click", () => {
+        MostrarCatalogo(catalogoContenedor, propiedadObjeto, filtro);
     })
-
-
 }
-function removerClaseListaToogle(ValorId){
+function removerClaseListaToogle(ValorId) {
     //se debe enviar la id sin ""
-    const clasu=ValorId.classList; //captura toda la lista de clases vinculas a esa id
+    const clasu = ValorId.classList; //captura toda la lista de clases vinculas a esa id
     clasu.remove("desocultar_toggle");
     //Con esta funcion se busca ocultar una seccion del filtro de catalogo.
 }
 
-function EjecutarFiltroCatalogo(){
+function EjecutarFiltroCatalogo() {
 
     renderFiltroCatalogoHTML(); //Muestra la lista de Categorias
 
-    filtrarJuegoPor("btnGTodos","nombreJuego"); //Muestra Todos los juegos
-    filtrarJuegoPor("btnGPC","plataforma","pc");
-    filtrarJuegoPor("btnGPlay","plataforma","playstation");
-    filtrarJuegoPor("btnGAccion","genero","acción");
-    filtrarJuegoPor("btnGAventura","genero","aventura");
-    filtrarJuegoPor("btnGDeportes","genero","deportes");
-    filtrarJuegoPor("btnGRpg","genero","rpg");
-    filtrarJuegoPor("btnGTerror","genero","terror");
-    filtrarJuegoPor("btnGEstrategia","genero","estrategia");
-    filtrarJuegoPor("btnGIngles","idioma","ingles");
-    filtrarJuegoPor("btnGEspañol","idioma","español");
-    filtrarJuegoPor("btnGMultilenguaje","idioma","multilenguaje");
+    filtrarJuegoPor("btnGTodos", "nombreJuego"); //Muestra Todos los juegos
+    filtrarJuegoPor("btnGPC", "plataforma", "pc");
+    filtrarJuegoPor("btnGPlay", "plataforma", "playstation");
+    filtrarJuegoPor("btnGAccion", "genero", "acción");
+    filtrarJuegoPor("btnGAventura", "genero", "aventura");
+    filtrarJuegoPor("btnGDeportes", "genero", "deportes");
+    filtrarJuegoPor("btnGRpg", "genero", "rpg");
+    filtrarJuegoPor("btnGTerror", "genero", "terror");
+    filtrarJuegoPor("btnGEstrategia", "genero", "estrategia");
+    filtrarJuegoPor("btnGIngles", "idioma", "ingles");
+    filtrarJuegoPor("btnGEspañol", "idioma", "español");
+    filtrarJuegoPor("btnGMultilenguaje", "idioma", "multilenguaje");
 
 
 }
 
 //------------------------------------------------Ejecutar
 
-setTimeout(()=>{
+setTimeout(() => {
     BusquedaDeJuego();//Muestra en index.html el catalogo y activa la barra de busqueda.
     console.log("Catalogo añadido a la Web!...")
 }, 0300)

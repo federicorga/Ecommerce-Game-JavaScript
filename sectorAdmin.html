@@ -1,80 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilo.css">
-    <title>Editor de Catalogo</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <title>Editor de Catalogo</title>
 </head>
+
 <body class="bodyAdmin">
-    <div id="contenedor_carga">
-        <div id="carga"></div>
-    </div>
+  <div id="contenedor_carga">
+    <div id="carga"></div>
+  </div>
 
-    <header>
+  <header>
 
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg myNav">
+      <div class="container-fluid">
+        <a class="navbar-brand tituloPrincipal" href="index.html"><img src="img/gamboy2.png" alt="icono"
+            class="imgPrincipal">
+          <h1>GAMER-ZONE</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    </header>  
+        <div class="collapse navbar-collapse liMenu" id="navbarNav">
 
-    <main>
-        
-        <form class="formularioGeneradorJuego" id="formGeneradorJuego">
-            <label for="nombreJuego">Nombre del Juego*</label>
-            <input type="text" id="nombreJuego"required>
-            <label for="plataforma">Plataforma</label>
-            <select name="plataforma" id="plataforma" ></select>
-            <label for="idioma">Idioma</label>
-            <select  name="idioma" id="idioma"></select>
-            <label for="genero">Genero</label>
-            <select name="genero" id="genero"></select>
-            <label for="tamano">Tamaño</label>
-            <input type="number" name="tamano" id="tamano"  placeholder="GB">
-            <label for="precio">Precio</label>
-            <input type="number" name="precio" id="precio"  placeholder="ARG$">
-            <label for="imagen">Imagen</label>
-            <input type="text" name="imagen" id="imagen"  placeholder="Formato: PNG">
-            <label for="descripcion">Descripción</label>
-            <textarea id="descripcion" cols="30" rows="10" ></textarea>
-            <button type="submit">Agregar Juego</button>
-            <input type="reset"></input>
-        </form>
-
-    
-
-        <section class="principalTotal">
-
-            <div class="ContenedorBarraBusqueda">
-
-                <input type="text" id="barraBuscadorAdmin" class="form-control my-2 barraBuscador" placeholder="Buscar...">
-
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <div class="liCarrito" id="liCarrito">
+                <a href="carrito.html" title="Carrito de Compra">
+                  <span class="iconCarrito"></span>
+                  <span class="iconNumCarrito" id="iconNumCarrito">0</span>
+                </a>
               </div>
-      
-            <section class="seccionCatalogo">
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item" id="iniciarSesionS">
+              <a class="nav-link" type="button">Admin</a>
+            </li>
 
-                <div id="catalogoContenedorAdmin" class="catalogoContenedor">
-      
-                </div>
-      
-            </section>
-             
-      
-          </section>
-    
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <main>
+
+    <form class="formularioGeneradorJuego" id="formGeneradorJuego">
+      <label for="nombreJuego">Nombre del Juego*</label>
+      <input type="text" id="nombreJuego" required>
+      <label for="plataforma">Plataforma</label>
+      <select name="plataforma" id="plataforma"></select>
+      <label for="idioma">Idioma</label>
+      <select name="idioma" id="idioma"></select>
+      <label for="genero">Genero</label>
+      <select name="genero" id="genero"></select>
+      <label for="tamano">Tamaño</label>
+      <input type="number" name="tamano" id="tamano" placeholder="GB">
+      <label for="precio">Precio</label>
+      <input type="number" name="precio" id="precio" placeholder="ARG$">
+      <label for="imagen">Imagen</label>
+      <input type="text" name="imagen" id="imagen" placeholder="Formato: PNG">
+      <label for="descripcion">Descripción</label>
+      <textarea id="descripcion" cols="30" rows="10"></textarea>
+      <button type="submit">Agregar Juego</button>
+      <input type="reset"></input>
+    </form>
+
+
+
+    <section class="principalTotal">
+
+      <div class="ContenedorBarraBusqueda">
+
+        <input type="text" id="barraBuscadorAdmin" class="form-control my-2 barraBuscador" placeholder="Buscar...">
+
+      </div>
+
+      <section class="seccionCatalogo">
+
+        <div id="catalogoContenedorAdmin" class="catalogoContenedor">
+
+        </div>
+
+      </section>
+
+
+    </section>
+
     <footer>
 
     </footer>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"></script>
+
+
+    <!-- SWEET ALERT -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <!-- TOASTIFY -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <!-- PAGINAS JS -->
 
     <script src="js/catalogoJuegos.js"></script>
     <script src="js/funcionesHerramienta.js"></script>
     <script src="js/sectorAdmin.js"></script>
     <script src="js/main.js"></script>
-    
-    
 
-    <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+
 </body>
+
 </html>

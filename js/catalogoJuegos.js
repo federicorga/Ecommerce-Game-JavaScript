@@ -93,9 +93,6 @@ listaGeneros.push(accion, aventura, deportes, rpg, terror, estrategia);
 //-------------------------------JUEGOS
 
 //LISTA DE JUEGOS
-
-
-
 function cargarCatalogoDeArchivoJson(){
 
 const catalogoJson=`/json/catalogoJuegos.json`;
@@ -114,16 +111,7 @@ fetch(catalogoJson)
   console.log("Carga Finalizada...");
   console.log(listaJuegos);
 })
-
-
-
 }
-
-
-
-
-
-
 function maximoId(){ //Devuelve el Numero ID Maximo de la lista juegos;
 
 let maximoId=0;
@@ -131,18 +119,13 @@ const listaDeIds=[];
 if(listaJuegos.length===0){
   maximoId= 0;
 }
-
 else{
 listaJuegos.forEach(element => {
   const id= element.id;
   listaDeIds.push(id);});
   maximoId = Math.max(...listaDeIds);//con los (...) puedo sacar el maximo de un array de numeros.
 }
-
-
-
 return maximoId;
-
 }
 
 

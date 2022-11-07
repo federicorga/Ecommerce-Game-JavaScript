@@ -5,6 +5,6 @@ window.onload=function(){
   contenedor.style.opacity = '0';
 }
 
-let carrito=[]; //Debo usar Let hasta ver la clase 15S
+let carrito=[];
 
-
+iniciarSesionAdmin();

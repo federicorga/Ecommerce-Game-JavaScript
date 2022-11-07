@@ -27,7 +27,6 @@ function agregarJuego(){
   console.log(listaJuegos);
 
 }
-
 function mostrarListaObjetosenSeccionHTML(sectionID, lista, propiedaObjeto) {
   //esta funcion permite devolver una lista array de objetos desplegable dentro de un Section del HTML.
   //se debe especificar la lista y la propiedad del objeto que desea mostrar.
@@ -82,7 +81,6 @@ const CatalogoAdmin=()=>{ //Me permite filtrar en la barra de busqueda al vincul
         };
 
     })
-
     if(catalogoContenedorAdmin.innerHTML=== ''){
         catalogoContenedorAdmin.innerHTML=`
         <div class="notFoundGame">
@@ -93,7 +91,6 @@ const CatalogoAdmin=()=>{ //Me permite filtrar en la barra de busqueda al vincul
     }
 
 }
-
 
 barraBuscadorAdmin.addEventListener('keyup', CatalogoAdmin); //filtra letra por letra
 

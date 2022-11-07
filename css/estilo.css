@@ -306,6 +306,36 @@
     transform: scale(1.05);
   }
 
+  .pDescripcionGame{
+    text-align: justify;
+    width: 100%;
+  }
+
+  .btnDescripcionGame {
+    border: 0;
+    background-color: #0093ddb3;
+    color: #fff;
+    font-size: 1em;
+    border-radius: 2.25em;
+    margin: 0.3125em;
+    padding: 0.625em 1.1em;
+    transition: box-shadow .1s;
+    box-shadow: 0 0 0 3px rgb(0 0 0 / 0%);
+    font-weight: 500;
+  }
+
+  .btnDescripcionGame:hover{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  }
+
+  .btnDescripcionGame:active{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  }
+
+  .btnDescripcionGame:focus-visible{
+    outline: none;
+  }
+
   .precioCard{
     color:#acdbf5;
     text-align: center;
@@ -354,6 +384,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
+    margin-top: 95px;
   }
 
   .menuCatalogo{
@@ -782,6 +813,11 @@ align-items: flex-start;
 
 }
 
+.cantidadCarritoConfirm{
+  text-align: center;
+  font-size: 1.1rem;
+}
+
 
 
 /*-----------------------TARJETA DE CREDITO */
@@ -984,10 +1020,44 @@ align-items: flex-start;
   border: none;
 }
 
+.btnConfirm:hover{
+  transition: 0.5s;
+  background-color: #588a1b;
+
+}
+
+.btnConfirm:active{
+  transition: 0.3s;
+  transform: scale(0.9);
+
+}
+
 .seccionDatos{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   margin-top: 22px;
   margin-bottom: 30px;
+}
+
+
+/*---------COMPRA EXITOSA SWEET ALERT */
+
+.CompraExitosaSweet{
+  display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  
+}
+
+.CompraExitosaSweet h2{
+  margin-bottom: 1.3rem;
+
+}
+
+.CompraExitosaSweet h3{
+
+  font-size: 1.3rem;
+  color: #6b9d50;
+
 }

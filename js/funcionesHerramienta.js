@@ -96,3 +96,33 @@ function getPrecioTotal(){
   return precioDeCompra;
 
 }
+
+function iniciarSesionAdmin(){
+  const iniciarSesion= document.getElementById("iniciarSesionS");
+
+  iniciarSesion.addEventListener("click", () => {
+    Swal.fire( {
+        title:"Login Admin",
+        html: `<input type="text" id="email" class="swal2-input" placeholder="Usuario">
+        <input type="password" id="password" class="swal2-input" placeholder="Password">`,
+        confirmButtonText: "Enviar",
+        showCancelButton: true,
+        cancelButtonText: "Cancelar",
+    }).then((result)=> {
+      if(result.isConfirmed) {
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+          console.log(email, password);
+          Swal.fire( {
+              title: "Inicio de Sesion Confirmada",
+              icon: "success",
+              timer: 2000,
+              showCancelButton: false,
+            showConfirmButton: false,
+          })
+          setTimeout(function(){ window.location = "http:/sectorAdmin.html"; }, 2000);
+      }
+  })
+})
+}
+

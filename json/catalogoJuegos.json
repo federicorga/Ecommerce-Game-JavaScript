@@ -8,10 +8,9 @@
         "tamano": "21 GB",
         "precio": "200.00",
         "imagen": "img/juegos/asassinscreedVal.png",
-        "descripcion": "...",
+        "descripcion": "Ponte en la piel de una leyenda vikinga en busca de gloria. Saquea a tus enemigos, haz prosperar tu asentamiento y consolida tu poder político. En Assassin’s Creed Valhalla, te pondrás en la piel de Eivor, una leyenda vikinga en busca de gloria. Explora la Inglaterra de los años oscuros mientras saqueas a tus enemigos, haces prosperar tu asentamiento y consolidas tu poder político.",
         "cantidad": 1
     },
-    
     {
         "id": 2,
         "nombreJuego": "Age of Empires II",
@@ -21,7 +20,7 @@
         "tamano": "3 GB",
         "precio": "299.00",
         "imagen": "img/juegos/Ageofempires2hd.png",
-        "descripcion": "...",
+        "descripcion": "El clásico Age of Empires II regresa al mercado con esta remasterización a la alta definición que incluye gráficos adaptados a las 1080p, texturas más definidas, así como mejores efectos de iluminación. El juego trae consigo además la expansión Conquerors.",
         "cantidad": 1
     },
     {
@@ -33,7 +32,7 @@
         "tamano": "8 GB",
         "precio": "1199.99",
         "imagen": "img/juegos/straytapa.png",
-        "descripcion": "...",
+        "descripcion": "Perdido, solo y separado de su familia, un gato callejero debe desentrañar un antiguo misterio para escapar de una ciudad olvidada hace mucho tiempo.",
         "cantidad": 1
     },
     {
@@ -45,7 +44,7 @@
         "tamano": "32.4 GB",
         "precio": "10999.99",
         "imagen": "img/juegos/fifiastreet.png",
-        "descripcion": "...",
+        "descripcion": "De los creadores de la galardonada franquicia EA SPORTS FIFA, e inspirado en futbolistas callejeros de todo el mundo, FIFA Street es el juego de fútbol callejero más auténtico jamás creado. Disfruta de una experiencia única y divertida.s",
         "cantidad": 1
     },
     {
@@ -57,7 +56,7 @@
         "tamano": "15 GB",
         "precio": "790.90",
         "imagen": "img/juegos/callofdutyww2.png",
-        "descripcion": "...",
+        "descripcion": "Call of Duty WWII regresa a sus orígenes, proponiendo al jugador una intensa y trepidante aventura de acción ambientada en la Segunda Guerra Mundial en la que no falta modo campaña y un potente multijugador online.",
         "cantidad": 1
     },
     {
@@ -69,7 +68,7 @@
         "tamano": "32.4 GB",
         "precio": "10999.99",
         "imagen": "img/juegos/thelastofus.png",
-        "descripcion": "...",
+        "descripcion": "Acción con tintes de survival horror que nos presenta un escenario en el que la población ha sido diezmada por una terrible plaga.",
         "cantidad": 1
     },
     {
@@ -81,7 +80,7 @@
         "tamano": "8 GB",
         "precio": "1199.99",
         "imagen": "img/juegos/gta5.png",
-        "descripcion": "...",
+        "descripcion": "Cuando un joven estafador callejero, un ladrón de bancos retirado y un psicópata aterrador se ven envueltos en algunos de los elementos más aterradores y trastornados del inframundo criminal, el gobierno de EE. UU. Y la industria del entretenimiento, deben llevar a cabo una serie de robos peligrosos para sobrevivir.",
         "cantidad": 1
     },
     {
@@ -93,7 +92,7 @@
         "tamano": "3 GB",
         "precio": "299.00",
         "imagen": "img/juegos/hitmancajaacero.png",
-        "descripcion": "...",
+        "descripcion": "El Agente 47 debe unir fuerzas con su amigo perdido hace mucho tiempo Lucas Gray para eliminar a los socios de Providence.",
         "cantidad": 1
     },
     {
@@ -105,7 +104,7 @@
         "tamano": "32.4 GB",
         "precio": "10999.99",
         "imagen": "img/juegos/godofwar.png",
-        "descripcion": "...",
+        "descripcion": "Se centra en la historia de la mitología nórdica, a diferencia de los títulos anteriores, que se ubicaban en la Antigua Grecia y su mitología.",
         "cantidad": 1
     },
     {
@@ -117,7 +116,7 @@
         "tamano": "3 GB",
         "precio": "299.00",
         "imagen": "img/juegos/csgo.png",
-        "descripcion": "...",
+        "descripcion": "Videojuego de disparos en primera persona desarrollado por Valve Corporation y Hidden Path Entertainment.",
         "cantidad": 1
     },
     {
@@ -129,7 +128,7 @@
         "tamano": "15 GB",
         "precio": "790.90",
         "imagen": "img/juegos/halflife.png",
-        "descripcion": "...",
+        "descripcion": "Transcurre dos décadas después de la historia del primer Half Life. Gordon Freeman despierta de su estado de hibernación y se convierte en el símbolo de la resistencia humana frente a la Alianza.",
         "cantidad": 1
     },
     {
@@ -141,7 +140,7 @@
         "tamano": "15 GB",
         "precio": "790.90",
         "imagen": "img/juegos/resitenevil2.png",
-        "descripcion": "...",
+        "descripcion": "Raccoon City, la ciudad norteamericana de la serie de juegos de Capcom, controlada por la corporación Umbrella y en la que se ha producido una brecha de seguridad biológica que ha convertido a todos sus habitantes en zombis y criaturas mutantes.",
         "cantidad": 1
     },
     {
@@ -149,11 +148,11 @@
         "nombreJuego": "Dark Souls III",
         "plataforma": "PlayStation",
         "idioma": "Multilenguaje",
-        "genero": "Terror",
+        "genero": "RPG",
         "tamano": "8 GB",
         "precio": "1199.99",
         "imagen": "img/juegos/darksouls3.png",
-        "descripcion": "...",
+        "descripcion": "Acción en tercera persona en el que nos enfrentamos a diversos enemigos y peligros en los escenarios.",
         "cantidad": 1
     },
     {
@@ -165,7 +164,7 @@
         "tamano": "32.4 GB",
         "precio": "10999.99",
         "imagen": "img/juegos/reddeadredeption2.png",
-        "descripcion": "...",
+        "descripcion": "Tras un asalto fallido en el pueblo de Blackwater, Arthur Morgan y la pandilla de Van der Linde se ven forzados a huir.",
         "cantidad": 1
     },
     {
@@ -177,7 +176,7 @@
         "tamano": "32.4 GB",
         "precio": "10999.99",
         "imagen": "img/juegos/cyberpunk.png",
-        "descripcion": "...",
+        "descripcion": "una historia de acción y aventura en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación corporal.",
         "cantidad": 1
     },
     {
@@ -189,7 +188,7 @@
         "tamano": "8 GB",
         "precio": "1199.99",
         "imagen": "img/juegos/battlefield.png",
-        "descripcion": "...",
+        "descripcion": "Desde las ciudades de Seúl hasta los desiertos de Egipto, cada mapa ofrece una experiencia única según el entorno natural.",
         "cantidad": 1
     },
     {
@@ -201,7 +200,7 @@
         "tamano": "15 GB",
         "precio": "790.90",
         "imagen": "img/juegos/shadowofwar.png",
-        "descripcion": "...",
+        "descripcion": "El jugador toma el control de Talion, un montaraz de Gondor que posee varias habilidades atléticas y de combate.",
         "cantidad": 1
     },
     {
@@ -213,7 +212,7 @@
         "tamano": "3 GB",
         "precio": "299.00",
         "imagen": "img/juegos/SCP.png",
-        "descripcion": "...",
+        "descripcion": "Durante una brecha de contención en una instalación remota de la fundación SCP, muchas de las anomalías han escapado – y no tienen intenciones pacíficas.",
         "cantidad": 1
     },
     {
@@ -225,7 +224,7 @@
         "tamano": "3 GB",
         "precio": "299.00",
         "imagen": "img/juegos/grinfandango.png",
-        "descripcion": "...",
+        "descripcion": "Cuenta una épica historia que abarca cuatro años en la vida (o muerte) de Manny Calavera, agente de viajes para muertos.",
         "cantidad": 1
     },
     {
@@ -237,8 +236,7 @@
         "tamano": "32.4 GB",
         "precio": "10999.99",
         "imagen": "img/juegos/dragonballkakarot.png",
-        "descripcion": "...",
+        "descripcion": "El jugador puede luchar contra oponentes y realizar actividades como pescar, recolectar orbes Z",
         "cantidad": 1
     }
-    
 ]
