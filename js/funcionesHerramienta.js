@@ -121,7 +121,7 @@ function iniciarSesionAdmin() {
           showConfirmButton: false,
         });
         setTimeout(function () {
-          window.location = "sectorAdmin.html";
+          window.open("sectorAdmin.html");
         }, 2000);
       }
     });

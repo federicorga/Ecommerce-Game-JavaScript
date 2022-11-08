@@ -113,7 +113,7 @@ function renderTotalCompraHTML() {
         }).then((result) => {
             if (result.isConfirmed) {
                 eliminarTodoElCarrito();
-                window.location.href = "index.html";
+                window.open("index.html");
             }
         });
     });
