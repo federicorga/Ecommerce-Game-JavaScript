@@ -6,7 +6,8 @@ function renderJuegoCompradoHTML(listaJuegoCarrito) {
     tbody.classList.add("compraConfirmada");
 
     tbody.innerHTML += `
-        <td> <img src="${listaJuegoCarrito.imagen}" class="imgJuegoCarrito" alt="${listaJuegoCarrito.nombreJuego
+        <td> <img src="${listaJuegoCarrito.imagen
+        }" class="imgJuegoCarrito" alt="${listaJuegoCarrito.nombreJuego
         }" width="49px"></td>
         <td><h3 class="nombreJuegoCarrito">${listaJuegoCarrito.nombreJuego
         }</h3></td>
@@ -66,20 +67,23 @@ function renderTotalCompraHTML() {
         <h2 class="TituloTotalCarrito">DATOS DE TARJETA</h2>
         <section>
             <section class="contenedorTarjeta">
-                    <div class="cred">
-                        <div class="face front">
-                            <h3 class="debit">Tarjeta de Credito</h3>
-                            <h3 class="bank"><input class="textBoxCard bancCard" type="text" placeholder="Banco"></h3>
-                            <img class="chip" src="img/chip.png" alt="chip">
-                            <input type="text" class="number textBoxCard numTarjCard" placeholder="0000 0000 0000 0000" value="0241 8609 1765 2243"></input>
-                            <h5 class="valid"><span>Valido Hasta</span><input class="textBoxCard ValidCard" type="text" placeholder="00/00" value="04/22"></input></h5>
-                            <h5 class="cred-holder"><input class="textBoxCard nombApCard" type="text" placeholder="Nombre y Apellido"></h5>
-                        </div>
-                </section>
+                <div class="cred">
+                    <div class="face front">
+                        <h3 class="debit">Tarjeta de Credito</h3>
+                        <h3 class="bank"><input class="textBoxCard bancCard" type="text" placeholder="Banco"></h3>
+                        <img class="chip" src="img/chip.png" alt="chip">
+                        <input type="text" class="number textBoxCard numTarjCard" placeholder="0000 0000 0000 0000"
+                         value="0241 8609 1765 2243"></input>
+                        <h5 class="valid"><span>Valido Hasta</span><input class="textBoxCard ValidCard" 
+                        type="text" placeholder="00/00" value="04/22"></input></h5>
+                        <h5 class="cred-holder"><input class="textBoxCard nombApCard" 
+                        type="text" placeholder="Nombre y Apellido"></h5>
+                    </div>
             </section>
+        </section>
 
-            <section class="SeccionBtnCompra">
-        <button class="btnConfirm" id="realizarCompra" type="submit">Confirmar Compra</button>
+        <section class="SeccionBtnCompra">
+            <button class="btnConfirm" id="realizarCompra" type="submit">Confirmar Compra</button>
         </section>
         </form>
     `;
@@ -109,7 +113,7 @@ function renderTotalCompraHTML() {
         }).then((result) => {
             if (result.isConfirmed) {
                 eliminarTodoElCarrito();
-                window.location = "http:/index.html";
+                window.location = "index.html";
             }
         });
     });

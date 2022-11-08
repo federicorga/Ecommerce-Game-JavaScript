@@ -5,36 +5,28 @@ function renderJuegoCarritoHTML(listaJuegoCarrito) {
   const tr = document.createElement("tr");
   tr.classList.add("juegoEnCarritoContenedor");
   tr.innerHTML += `
-        <td> <img src="${
-          listaJuegoCarrito.imagen
-        }" class="imgJuegoCarrito" alt="${
-    listaJuegoCarrito.nombreJuego
-  }" width="95px"></td>
-        <td><h3 class="nombreJuegoCarrito">${
-          listaJuegoCarrito.nombreJuego
-        }</h3></td>
+        <td> <img src="${listaJuegoCarrito.imagen
+    }" class="imgJuegoCarrito" alt="${listaJuegoCarrito.nombreJuego
+    }" width="95px"></td>
+        <td><h3 class="nombreJuegoCarrito">${listaJuegoCarrito.nombreJuego
+    }</h3></td>
         <td><h5 class="precioCarrito">$${listaJuegoCarrito.precio}</h5></td>
         <td>
-            <input id="btnResta${
-              listaJuegoCarrito.id
-            }" class="btnRe" type="button" value="-">
+            <input id="btnResta${listaJuegoCarrito.id
+    }" class="btnRe" type="button" value="-">
 
-            <h5 class="cantidadCarrito" id="cantidadCarritoTabla">${
-              listaJuegoCarrito.cantidad
-            }</h5>
+            <h5 class="cantidadCarrito" id="cantidadCarritoTabla">${listaJuegoCarrito.cantidad
+    }</h5>
 
-            <input id="btnSuma${
-              listaJuegoCarrito.id
-            }" class="btnSu" value="+" type="button">
+            <input id="btnSuma${listaJuegoCarrito.id
+    }" class="btnSu" value="+" type="button">
         </td>
         <td><h5 class="subTotalCarrito">$${(
-          listaJuegoCarrito.precio * listaJuegoCarrito.cantidad
-        ).toFixed(2)}</h5></td>
-        <td><a href="#" id="btnEliminar${
-          listaJuegoCarrito.id
-        }"><img src="img/tachoBasura.png"" class="tachoBasuraCarrito" alt="tacho${
-    listaJuegoCarrito.id
-  }" width="30px"></a></td>
+      listaJuegoCarrito.precio * listaJuegoCarrito.cantidad
+    ).toFixed(2)}</h5></td>
+        <td><a href="#" id="btnEliminar${listaJuegoCarrito.id
+    }"><img src="img/tachoBasura.png"" class="tachoBasuraCarrito" alt="tacho${listaJuegoCarrito.id
+    }" width="30px"></a></td>
     `;
 
   tablaCarrito.appendChild(tr);
@@ -120,14 +112,14 @@ function renderCardCarritoTotal() {
                 <th>TOTAL</th>
                 <td>
                 <span class="precioTotal" id="spaneando">ARS$${SubtotalPrecioCarrito().toFixed(
-                  2
-                )}</span>
+    2
+  )}</span>
                 </td>
             </tr>
             </tbody>
       </table>
       <section class="SeccionBtnCompra">
-      <button class="btnCompra" id="realizarCompra"><a href="/compraConfirm.html">COMPRAR</a></button>
+      <button class="btnCompra" id="realizarCompra"><a href="compraConfirm.html">COMPRAR</a></button>
       </section>
     `;
   cardTotal.appendChild(divTotal);
