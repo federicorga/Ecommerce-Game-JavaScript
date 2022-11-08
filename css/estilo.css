@@ -541,7 +541,6 @@
     width: 20px;
     margin-left: 5px;
     filter: invert(99%) sepia(4%) saturate(306%) hue-rotate(153deg) brightness(118%) contrast(90%);
-    
     flex-wrap: wrap;
     flex-direction: column;
   }
@@ -556,12 +555,13 @@
   .SeccionCarritoHTML{
   
     display: flex;
-      justify-content: space-around;
-      padding-top: 50px;
+    justify-content: space-around;
+    padding-top: 50px;
+    flex-wrap: wrap;
   }
 
   .cardTotal{
-    padding-top: 105px;
+    padding-top: 52px;
   }
 
   .boxCardTotal{

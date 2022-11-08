@@ -8,7 +8,8 @@ function mostrarListaObjetosenSeccionHTML(sectionID, lista, propiedaObjeto) {
     elementoId.innerHTML += `
         <li value="${listagenerada[`${propiedaObjeto}`]}">
             <button class="filtro${listagenerada[`${propiedaObjeto}`]}
-                "id="filtro${listagenerada[`${propiedaObjeto}`]}">${listagenerada[`${propiedaObjeto}`]}
+                "id="filtro${listagenerada[`${propiedaObjeto}`]}">${listagenerada[`${propiedaObjeto}`]
+      }
             </button>
         </li>
     `;
@@ -90,39 +91,39 @@ function LimpiarCarritoBtnClick() {
   });
 }
 
-function getPrecioTotal(){
+function getPrecioTotal() {
   let precioDeCompra = JSON.parse(localStorage.getItem("precioDeCompra"));
-  
-  return precioDeCompra;
 
+  return precioDeCompra;
 }
 
-function iniciarSesionAdmin(){
-  const iniciarSesion= document.getElementById("iniciarSesionS");
+function iniciarSesionAdmin() {
+  const iniciarSesion = document.getElementById("iniciarSesionS");
 
   iniciarSesion.addEventListener("click", () => {
-    Swal.fire( {
-        title:"Login Admin",
-        html: `<input type="text" id="email" class="swal2-input" placeholder="Usuario">
+    Swal.fire({
+      title: "Login Admin",
+      html: `<input type="text" id="email" class="swal2-input" placeholder="Usuario">
         <input type="password" id="password" class="swal2-input" placeholder="Password">`,
-        confirmButtonText: "Enviar",
-        showCancelButton: true,
-        cancelButtonText: "Cancelar",
-    }).then((result)=> {
-      if(result.isConfirmed) {
-          const email = document.getElementById("email").value;
-          const password = document.getElementById("password").value;
-          console.log(email, password);
-          Swal.fire( {
-              title: "Inicio de Sesion Confirmada",
-              icon: "success",
-              timer: 2000,
-              showCancelButton: false,
-            showConfirmButton: false,
-          })
-          setTimeout(function(){ window.location = "http:/sectorAdmin.html"; }, 2000);
+      confirmButtonText: "Enviar",
+      showCancelButton: true,
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        console.log(email, password);
+        Swal.fire({
+          title: "Inicio de Sesion Confirmada",
+          icon: "success",
+          timer: 2000,
+          showCancelButton: false,
+          showConfirmButton: false,
+        });
+        setTimeout(function () {
+          window.location = "http:/sectorAdmin.html";
+        }, 2000);
       }
-  })
-})
+    });
+  });
 }
-

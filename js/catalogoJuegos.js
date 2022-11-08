@@ -26,7 +26,17 @@ const listaIdiomas = [];
 //------------------------------------------------------------------------------------
 
 class Juego {
-  constructor(id, nombreJuego = "...", plataforma = "...", idioma = "...", genero = "...", tamano = "...", precio = "...", imagen="...", descripcion = "...",){
+  constructor(
+    id,
+    nombreJuego = "...",
+    plataforma = "...",
+    idioma = "...",
+    genero = "...",
+    tamano = "...",
+    precio = "...",
+    imagen = "...",
+    descripcion = "..."
+  ) {
     this.id = id;
     this.nombreJuego = nombreJuego;
     this.plataforma = plataforma;
@@ -34,18 +44,16 @@ class Juego {
     this.genero = genero;
     this.tamano = `${tamano} GB`;
     this.precio = precio.toFixed(2);
-    this.imagen= imagen;
+    this.imagen = imagen;
     this.descripcion = descripcion;
-    this.cantidad= 1;
-    
+    this.cantidad = 1;
   }
 
-  ImportarElementoDelistaObjeto(array, indice){
+  ImportarElementoDelistaObjeto(array, indice) {
     let opcionNaN = Number.isNaN(indice);
     if (opcionNaN === true) {
       return "...";
-    } 
-    else {
+    } else {
       const objetoImportado = array[indice];
       for (let propiedad in objetoImportado) {
         const valorPropiedad = objetoImportado[propiedad];
@@ -93,41 +101,40 @@ listaGeneros.push(accion, aventura, deportes, rpg, terror, estrategia);
 //-------------------------------JUEGOS
 
 //LISTA DE JUEGOS
-function cargarCatalogoDeArchivoJson(){
+function cargarCatalogoDeArchivoJson() {
+  const catalogoJson = `../json/catalogoJuegos.json`;
 
-const catalogoJson=`/json/catalogoJuegos.json`;
+  fetch(catalogoJson)
+    .then((respuesta) => respuesta.json()) //Respuesta del servidor
+    .then((datos) => {
+      console.log("Catalogo de Archivo JSON Cargando...");
 
-fetch(catalogoJson)
-.then(respuesta=>respuesta.json()) //Respuesta del servidor
-.then(datos =>{
-  console.log("Catalogo de Archivo JSON Cargando...");
-    
-  datos.forEach((juego)=>{
-    listaJuegos.push(juego);
-  })
-})
+      datos.forEach((juego) => {
+        listaJuegos.push(juego);
+      });
+    })
 
-.finally(()=>{
-  console.log("Carga Finalizada...");
-  console.log(listaJuegos);
-})
+    .finally(() => {
+      console.log("Carga Finalizada...");
+      console.log(listaJuegos);
+    });
 }
-function maximoId(){ //Devuelve el Numero ID Maximo de la lista juegos;
+function maximoId() {
+  //Devuelve el Numero ID Maximo de la lista juegos;
 
-let maximoId=0;
-const listaDeIds=[];
-if(listaJuegos.length===0){
-  maximoId= 0;
+  let maximoId = 0;
+  const listaDeIds = [];
+  if (listaJuegos.length === 0) {
+    maximoId = 0;
+  } else {
+    listaJuegos.forEach((element) => {
+      const id = element.id;
+      listaDeIds.push(id);
+    });
+    maximoId = Math.max(...listaDeIds); //con los (...) puedo sacar el maximo de un array de numeros.
+  }
+  return maximoId;
 }
-else{
-listaJuegos.forEach(element => {
-  const id= element.id;
-  listaDeIds.push(id);});
-  maximoId = Math.max(...listaDeIds);//con los (...) puedo sacar el maximo de un array de numeros.
-}
-return maximoId;
-}
-
 
 //-------------------------Ejecutar
 

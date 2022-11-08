@@ -34,29 +34,26 @@ function renderJuegoHTML(game) {
         }).showToast();
     })
 
-    const renderInfo= document.getElementById(`${game.nombreJuego}`);
+    const renderInfo = document.getElementById(`${game.nombreJuego}`);
 
-renderInfo.addEventListener("click",()=>{
-    Swal.fire({
-        title: `${game.nombreJuego}`,
-        html: `<p class="pDescripcionGame">${game.descripcion}</p>`,
-        imageUrl: `${game.imagen}`,
-        imageWidth: 202,
-        imageHeight: 240,
-        confirmButtonText: "X",
-        background: `linear-gradient(20deg, #1b2838, #090f16)`,
-        imageAlt: 'Custom image',
-        color: '#9099a1',
-        customClass: {
-            confirmButton:'btnDescripcionGame'
-        },
-        buttonsStyling: false
-      })
-})
+    renderInfo.addEventListener("click", () => {
+        Swal.fire({
+            title: `${game.nombreJuego}`,
+            html: `<p class="pDescripcionGame">${game.descripcion}</p>`,
+            imageUrl: `${game.imagen}`,
+            imageWidth: 202,
+            imageHeight: 240,
+            confirmButtonText: "X",
+            background: `linear-gradient(20deg, #1b2838, #090f16)`,
+            imageAlt: 'Custom image',
+            color: '#9099a1',
+            customClass: {
+                confirmButton: 'btnDescripcionGame'
+            },
+            buttonsStyling: false
+        })
+    })
 }
-
-
-
 function MostrarCatalogo(catalogoContenedor, propiedadObjeto, textoBuscador = '') {
     //Esta funcion me permite traer todo el catalogo o una parte de acuerdo a lo especificado en
     // sus parametros
@@ -217,11 +214,4 @@ setTimeout(() => {
 }, 0300)
 
 EjecutarFiltroCatalogo(); //Ejecuto la lista de Categorias para Filtrar.
-mostrarValorCarritoIcon(); //Muestra el N° de juegos agregados en el icono del carrito NavBar
-
-
-
-
-
-
-
+mostrarValorCarritoIcon(); //Muestra el N° de juegos agregados en el icono del carrito NavBar.
