@@ -6,8 +6,7 @@ function renderJuegoCompradoHTML(listaJuegoCarrito) {
     tbody.classList.add("compraConfirmada");
 
     tbody.innerHTML += `
-        <td> <img src="${listaJuegoCarrito.imagen
-        }" class="imgJuegoCarrito" alt="${listaJuegoCarrito.nombreJuego
+        <td> <img src="${listaJuegoCarrito.imagen}" class="imgJuegoCarrito" alt="${listaJuegoCarrito.nombreJuego
         }" width="49px"></td>
         <td><h3 class="nombreJuegoCarrito">${listaJuegoCarrito.nombreJuego
         }</h3></td>
