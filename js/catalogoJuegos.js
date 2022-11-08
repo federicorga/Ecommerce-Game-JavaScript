@@ -102,7 +102,7 @@ listaGeneros.push(accion, aventura, deportes, rpg, terror, estrategia);
 
 //LISTA DE JUEGOS
 function cargarCatalogoDeArchivoJson() {
-  const catalogoJson = `../json/catalogoJuegos.json`;
+  const catalogoJson = `json/catalogoJuegos.json`;
 
   fetch(catalogoJson)
     .then((respuesta) => respuesta.json()) //Respuesta del servidor
@@ -113,7 +113,7 @@ function cargarCatalogoDeArchivoJson() {
         listaJuegos.push(juego);
       });
     })
-
+    
     .finally(() => {
       console.log("Carga Finalizada...");
       console.log(listaJuegos);
