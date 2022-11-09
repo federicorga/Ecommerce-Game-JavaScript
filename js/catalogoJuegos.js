@@ -1,3 +1,5 @@
+
+
 class Genero {
   constructor(nombreGenero) {
     this.nombreGenero = nombreGenero;
@@ -101,24 +103,11 @@ listaGeneros.push(accion, aventura, deportes, rpg, terror, estrategia);
 //-------------------------------JUEGOS
 
 //LISTA DE JUEGOS
-function cargarCatalogoDeArchivoJson() {
-  const catalogoJson = `json/catalogoJuegos.json`;
 
-  fetch(catalogoJson)
-    .then((respuesta) => respuesta.json()) //Respuesta del servidor
-    .then((datos) => {
-      console.log("Catalogo de Archivo JSON Cargando...");
+const catalogoJson = `json/catalogoJuegos.json`;
 
-      datos.forEach((juego) => {
-        listaJuegos.push(juego);
-      });
-    })
-    
-    .finally(() => {
-      console.log("Carga Finalizada...");
-      console.log(listaJuegos);
-    });
-}
+
+
 function maximoId() {
   //Devuelve el Numero ID Maximo de la lista juegos;
 
@@ -138,4 +127,3 @@ function maximoId() {
 
 //-------------------------Ejecutar
 
-cargarCatalogoDeArchivoJson();

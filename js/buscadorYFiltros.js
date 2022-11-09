@@ -78,7 +78,6 @@ function MostrarCatalogo(catalogoContenedor, propiedadObjeto, textoBuscador = ''
 
 function BusquedaDeJuego() { //Me permite filtrar en la barra de busqueda al vincularlo.
     //muestra todo el catalogo si la barra de busqueda esta vacia.
-
     const barraBuscador = document.getElementById("barraBuscador");
     const textoBuscador = barraBuscador.value;
     MostrarCatalogo(catalogoContenedor, "nombreJuego", textoBuscador);
@@ -206,12 +205,17 @@ function EjecutarFiltroCatalogo() {
 
 }
 
+
+async function EjecutarCatalogoYBarraBusqueda() {
+    const respuesta = await fetch(catalogoJson);
+    const datosDeCatalogoJson = await respuesta.json();
+    CargarDatosJsonEnListaJuegos(datosDeCatalogoJson);
+    BusquedaDeJuego();
+    console.log("Catalogo añadido a la Web!...")
+  }
+
 //------------------------------------------------Ejecutar
 
-setTimeout(() => {
-    BusquedaDeJuego();//Muestra en index.html el catalogo y activa la barra de busqueda.
-    console.log("Catalogo añadido a la Web!...")
-}, 0300)
-
+EjecutarCatalogoYBarraBusqueda();//Muestra en index.html el catalogo y activa la barra de busqueda.
 EjecutarFiltroCatalogo(); //Ejecuto la lista de Categorias para Filtrar.
 mostrarValorCarritoIcon(); //Muestra el N° de juegos agregados en el icono del carrito NavBar.

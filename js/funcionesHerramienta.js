@@ -1,3 +1,11 @@
+
+function CargarDatosJsonEnListaJuegos(datos){
+  datos.forEach((juego) => {
+    listaJuegos.push(juego);
+    //permite agregar los datos del catalogoJuegos.json a la lista de juegos.
+  });
+}
+
 function mostrarListaObjetosenSeccionHTML(sectionID, lista, propiedaObjeto) {
   //esta funcion permite devolver una lista array de objetos desplegable dentro de un Section del HTML.
   //se debe especificar la lista y la propiedad del objeto que desea mostrar.
@@ -21,18 +29,14 @@ function mostrarListaObjetosenSeccionHTML(sectionID, lista, propiedaObjeto) {
 
 const agregarAlCarrito = (id) => {
   const productoJuego = listaJuegos.find((juego) => juego.id === id);
-
   const juegoEnCarrito = carrito.find((juego) => juego.id === id);
-
   if (juegoEnCarrito) {
     juegoEnCarrito.cantidad++;
     console.log(`se agrego otro ${juegoEnCarrito.nombreJuego} al Carrito!`);
   } else {
     carrito.push(productoJuego);
-
     console.log(`Se agrego ${productoJuego.nombreJuego} al Carrito!`);
   }
-
   localStorage.setItem("carrito", JSON.stringify(carrito));
   mostrarValorCarritoIcon();
   SubtotalPrecioCarrito();
@@ -127,3 +131,4 @@ function iniciarSesionAdmin() {
     });
   });
 }
+
