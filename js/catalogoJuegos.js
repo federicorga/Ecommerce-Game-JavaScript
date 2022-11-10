@@ -1,5 +1,4 @@
 
-
 class Genero {
   constructor(nombreGenero) {
     this.nombreGenero = nombreGenero;
@@ -51,19 +50,8 @@ class Juego {
     this.cantidad = 1;
   }
 
-  ImportarElementoDelistaObjeto(array, indice) {
-    let opcionNaN = Number.isNaN(indice);
-    if (opcionNaN === true) {
-      return "...";
-    } else {
-      const objetoImportado = array[indice];
-      for (let propiedad in objetoImportado) {
-        const valorPropiedad = objetoImportado[propiedad];
-        return valorPropiedad;
-      }
-    }
-  }
 }
+
 const listaJuegos = [];
 
 //------------------------------------------------------------------------------------
@@ -105,25 +93,4 @@ listaGeneros.push(accion, aventura, deportes, rpg, terror, estrategia);
 //LISTA DE JUEGOS
 
 const catalogoJson = `json/catalogoJuegos.json`;
-
-
-
-function maximoId() {
-  //Devuelve el Numero ID Maximo de la lista juegos;
-
-  let maximoId = 0;
-  const listaDeIds = [];
-  if (listaJuegos.length === 0) {
-    maximoId = 0;
-  } else {
-    listaJuegos.forEach((element) => {
-      const id = element.id;
-      listaDeIds.push(id);
-    });
-    maximoId = Math.max(...listaDeIds); //con los (...) puedo sacar el maximo de un array de numeros.
-  }
-  return maximoId;
-}
-
-//-------------------------Ejecutar
 

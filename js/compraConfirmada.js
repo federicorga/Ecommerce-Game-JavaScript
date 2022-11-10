@@ -57,7 +57,7 @@ function renderTotalCompraHTML() {
                 <label for="nombyapeC">Nombre y Apellido</label>
                 <input class="form-control" type="text" id="nombyapeC" required>
                 <label for="emailC">Email</label>
-                <input class="form-control"placeholder="lepu@gmail.com" value="lepu@gmail.com" type="email" id="emailC" required>
+                <input class="form-control"placeholder="tienda-gamer@gmail.com" value="tienda-gamer@gmail.com" type="email" id="emailC" required>
                 <label for="telefonoC">Telefono</label>
                 <input class="form-control" type="tel" id="telefonoC">
                 <label for="direccionC">Dirección</label>
@@ -104,6 +104,9 @@ function renderTotalCompraHTML() {
             <div class="CompraExitosaSweet">
                 <h2>${nombyapeC}</h2>
                 <p>Gracias por elegirnos!<p>
+
+                <img class="animate__animated animate__swing bolsaTienda" src="img/tendgame.png" alt="bolsatienda">
+                
                 <p>Su Factura fue enviada a:<h3>${emailC}<h3></p>
             </div>`,
             showCancelButton: false,
@@ -113,14 +116,14 @@ function renderTotalCompraHTML() {
         }).then((result) => {
             if (result.isConfirmed) {
                 eliminarTodoElCarrito();
-                window.open("index.html");
+                window.open("index.html","_self"); //_self evita que abra una nueva pestaña, remplaza la pagina
             }
         });
     });
 }
 
-//ejecutar
+//------------------------Ejecutar
 
 renderTotalCompraHTML();
-mostrarValorCarritoIcon();
-MostrarProductoComprados();
+mostrarValorCarritoIcon(); //Muestra el N° de juegos agregados en el icono del carrito NavBar
+MostrarProductoComprados(); //Muestra los juegos agregados y su total en compraConfirm.html

@@ -9,7 +9,7 @@ function renderJuegoHTML(game) {
 		<div class="card-body informacionTarjeta">
 			<h2 class="card-title">${game.nombreJuego}</h2>
 			<h4 class="card-title">Plataforma: ${game.plataforma}</h4>
-			<h4 class="card-title">Genero: ${game.genero}</h4>
+			<h4 class="card-title">Género: ${game.genero}</h4>
 			<h4 class="card-title">Idioma: ${game.idioma}</h4>
 			<h4 class="card-title">Tamaño: ${game.tamano}</h4>
 			<h5 class="card-title precioCard">ARS$${game.precio}</h5>
@@ -50,7 +50,7 @@ function renderJuegoHTML(game) {
             customClass: {
                 confirmButton: 'btnDescripcionGame'
             },
-            buttonsStyling: false
+            buttonsStyling: false,
         })
     })
 }
@@ -172,7 +172,7 @@ function renderFiltroCatalogoHTML() {
 function filtrarJuegoPor(valorId, propiedadObjeto, filtro = "") {
     //Esta funcion permite capturar el id, crear el documento
     // y asignarle el evento click que permite filtrar el catalogo
-    //todo esto dependiendo de que parametro le parte desea mostrar.
+    //todo esto dependiendo de que parametro le pase desea mostrar.
     valorId = document.getElementById(valorId);
     valorId.addEventListener("click", () => {
         MostrarCatalogo(catalogoContenedor, propiedadObjeto, filtro);

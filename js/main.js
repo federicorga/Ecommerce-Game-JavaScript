@@ -7,4 +7,3 @@ window.onload=function(){
 
 let carrito=[];
 
-iniciarSesionAdmin();

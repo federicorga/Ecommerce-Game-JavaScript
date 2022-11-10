@@ -101,34 +101,20 @@ function getPrecioTotal() {
   return precioDeCompra;
 }
 
-function iniciarSesionAdmin() {
-  const iniciarSesion = document.getElementById("iniciarSesionS");
+function maximoId() {
+  //Devuelve el Numero ID Maximo de la lista juegos;
 
-  iniciarSesion.addEventListener("click", () => {
-    Swal.fire({
-      title: "Login Admin",
-      html: `<input type="text" id="email" class="swal2-input" placeholder="Usuario">
-        <input type="password" id="password" class="swal2-input" placeholder="Password">`,
-      confirmButtonText: "Enviar",
-      showCancelButton: true,
-      cancelButtonText: "Cancelar",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
-        console.log(email, password);
-        Swal.fire({
-          title: "Inicio de Sesion Confirmada",
-          icon: "success",
-          timer: 2000,
-          showCancelButton: false,
-          showConfirmButton: false,
-        });
-        setTimeout(function () {
-          window.open("sectorAdmin.html");
-        }, 2000);
-      }
+  let maximoId = 0;
+  const listaDeIds = [];
+  if (listaJuegos.length === 0) {
+    maximoId = 0;
+  } else {
+    listaJuegos.forEach((element) => {
+      const id = element.id;
+      listaDeIds.push(id);
     });
-  });
+    maximoId = Math.max(...listaDeIds); //con los (...) puedo sacar el maximo de un array de numeros.
+  }
+  return maximoId;
 }
 
