@@ -21,6 +21,7 @@ function renderJuegoHTML(game) {
     const btnAgregarCarro = document.getElementById(`btnAgregarCarro${game.id}`);
     btnAgregarCarro.addEventListener("click", () => {
         agregarAlCarrito(game.id);
+        
         Toastify({
             text: `${game.nombreJuego} agregado al carrito`,
             duration: 1200,

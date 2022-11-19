@@ -739,6 +739,35 @@ h1 {
   transform: scale(0.9);
 }
 
+.seguirComprando{
+  color: #fff;
+  background-color: rgb(17 59 187);
+  width: 141px;
+  height: 46px;
+  text-align: center;
+  border-radius: 26px;
+  border: none;
+  font-style: none;
+  list-style: none;
+}
+
+.seguirComprando a{
+
+  text-decoration: none;
+  color: #fff;
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+.seguirComprando:hover{
+  transition: 0.5s;
+  background-color: #588a1b;
+}
+.seguirComprando:active{
+  transition: 0.3s;
+  transform: scale(0.9);
+}
+
 .tableTotalCar {
   width: 100%;
 }
@@ -801,6 +830,8 @@ h1 {
 .btnCompra a {
   text-decoration: none;
   color: #fff;
+  padding-top: 9px;
+  padding-bottom: 9px;
 }
 
 .btnCompra:hover {
