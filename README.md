@@ -32,7 +32,7 @@ _Tienda de Videojuegos_
 
 ## Descripción del proyecto:
 
-Se trata de una tienda para la compra de Videojuegos, se puede visualizar todos los juegos de la tienda o filtrar por categoría mediante los listados.
+Se trata de una tienda para la compra de Videojuegos, se puede visualizar todos los juegos de la tienda o filtrar por categoría mediante los listados o la barra de busqueda.
 
 * Al hacer click en "en cada Portada" de los juego, se encontrará la descripción del mismo.
 
