@@ -1,4 +1,4 @@
-# JavaScript
+# Proyecto JavaScript
 ## E-Commerce Gamer
 
 _Tienda de Videojuegos_
