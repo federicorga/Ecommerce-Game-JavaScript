@@ -3,7 +3,7 @@
 
 _Tienda de Videojuegos_
 
-Link de la web [Zona-Gamer](https://federicorga.github.io/Proyecto-tiendaJuegos-JS/)
+Link de la web [Zona-Gamer](https://federicorga.github.io/Ecommerce-Game-JavaScript/)
 
 
 
