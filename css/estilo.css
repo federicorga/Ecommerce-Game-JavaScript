@@ -38,6 +38,23 @@ header {
 }
 
 
+main{
+  width: 100%;
+}
+
+.content-main-full{
+  position: relative;
+  bottom: 50px;
+  padding-left: 6%;
+}
+
+.imgfull{
+  margin-top: 74px;
+  width: 100%;
+  height: 400px;
+  background-image: url(../img/imgfull.jpg);
+}
+
 
 
 .myNav {
@@ -259,16 +276,14 @@ box-shadow: 0 0 7px 0px #000;
 /*--------------------------------------------------------------------------*/
 
 .principalTotal {
-  width: 992px;
+  width: 1100px;
 
 }
 
 .SeccionBarraBusqueda {
   display: flex;
-  align-items: center;
-  background: radial-gradient(63.94% 1024px at 50% 200px,
-      #203f6e63 0%,
-      #181d23 100%);
+  align-items: flex-start;
+  background: radial-gradient(63.94% 1024px at 50% 200px, #203f6e63 0%, #181d23 100%);
   justify-content: space-between;
   padding-left: 14px;
 }
@@ -276,12 +291,14 @@ box-shadow: 0 0 7px 0px #000;
 .SeccionBarraBusqueda h2 {
   font-family: "Motiva Sans", Sans-serif;
   color: #b8b6b4;
+  padding-top: 13px;
   letter-spacing: 1px;
   font-size: 1.2rem;
 }
 
 .ContenedorBarraBusqueda {
   width: 50%;
+  padding-top: 10px;
   padding-right: 10px;
 }
 
@@ -311,7 +328,7 @@ box-shadow: 0 0 7px 0px #000;
 
 .catalogoContenedor {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
@@ -353,6 +370,7 @@ h1 {
 .tarjeta {
   width: 16.5rem;
     margin-top: 20px;
+    margin-left: 25px;
     background-color: #1b2838;
     box-shadow: 0 0 2px 0px #000;
 }
@@ -448,7 +466,7 @@ h1 {
 
 .carruselNovedades {
   margin-bottom: 50px;
-  width: 966px;
+  width: 1100px;
   margin-top: 100px;
 }
 
@@ -463,11 +481,9 @@ h1 {
 }
 
 .menuCatalogo {
-  background: radial-gradient(63.94% 1024px at 50% 200px,
-      #1d3e6e45 0%,
-      #171f29 100%);
+  background: radial-gradient(63.94% 1024px at 50% 200px, #1d3e6e45 0%, #171f29 100%);
   color: #c6d4df;
-  width: 177px;
+  width: 263px;
   padding-left: 10px;
   font-size: 12px;
   font-family: "Motiva Sans", Sans-serif;
@@ -475,10 +491,12 @@ h1 {
 
 .menuCatalogo ul {
   padding: 0;
+  padding-right: 10px;
+  padding-left: 5px;
 }
 
 .liFiltro {
-  border-bottom: 1px solid #808080e0;
+  /* border-bottom: 1px solid #808080e0; */
   list-style: none;
   margin-top: 5px;
 }
@@ -504,6 +522,7 @@ h1 {
 
 .TitulosFiltros {
   display: flex;
+  margin-top: 8px;
   font-size: 12px;
   justify-content: space-between;
   color: #536f86
